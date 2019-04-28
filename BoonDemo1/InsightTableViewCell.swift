@@ -12,9 +12,11 @@ class InsightTableViewCell: UITableViewCell {
     
     @IBOutlet weak var insightTitle: UILabel!
     @IBOutlet weak var insightDesc: UILabel!
+    @IBOutlet weak var insightImage: UIImageView!
     
     func setInsight(insight: Insight){
         insightTitle.text = insight.title
         insightDesc.text = insight.text
+        insightImage.image = insight.image
     }
 }

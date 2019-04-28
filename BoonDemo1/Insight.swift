@@ -12,9 +12,11 @@ import UIKit
 class Insight {
     var title : String
     var text : String
+    var image : UIImage
     
-    init( title : String, text : String){
+    init( title : String, text : String, image : UIImage){
         self.title = title
         self.text = text
+        self.image = image
     }
 }

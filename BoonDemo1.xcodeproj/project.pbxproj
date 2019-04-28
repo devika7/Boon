@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2AD1EF3AADBF2B04E6E91AAD /* Pods_BoonDemo1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876C7E4A5CCEF5C7A0C2B35F /* Pods_BoonDemo1Tests.framework */; };
+		7E98375B873DAC0830CE4B53 /* Pods_BoonDemo1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5474F98D9183912BD2B395 /* Pods_BoonDemo1UITests.framework */; };
+		E001BBAEB2CCC836CA5CE9D5 /* Pods_BoonDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */; };
 		E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3051226BEECC00F0726B /* InsightViewController.swift */; };
 		E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3053226BF55D00F0726B /* VideoViewController.swift */; };
 		E85B3056226BFA6100F0726B /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3055226BFA6100F0726B /* VideoCell.swift */; };
@@ -22,6 +25,12 @@
 		E8A2D33F226CDB160047A654 /* Video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = E8A2D33E226CDB160047A654 /* Video.MOV */; };
 		E8A2D341226CE8920047A654 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2D340226CE8920047A654 /* Insight.swift */; };
 		E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */; };
+		F1081A8A2274BCB20043F53B /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A892274BCB20043F53B /* PortfolioViewController.swift */; };
+		F1081A8E2274BD7B0043F53B /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A8D2274BD7B0043F53B /* Portfolio.swift */; };
+		F1081A902274BDAD0043F53B /* PortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */; };
+		F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */; };
+		F142915F227395B100282058 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F142915E227395B100282058 /* GoogleService-Info.plist */; };
+		F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		09492DE19927713E25E17D86 /* Pods-BoonDemo1UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1UITests.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1UITests/Pods-BoonDemo1UITests.release.xcconfig"; sourceTree = "<group>"; };
+		25F995B60C3A73128824F585 /* Pods-BoonDemo1UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1UITests.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1UITests/Pods-BoonDemo1UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoonDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0528310E3EA23296ED5123 /* Pods-BoonDemo1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1Tests.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1Tests/Pods-BoonDemo1Tests.release.xcconfig"; sourceTree = "<group>"; };
+		876C7E4A5CCEF5C7A0C2B35F /* Pods_BoonDemo1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoonDemo1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E28FB70336181BFEA152C48E /* Pods-BoonDemo1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1Tests.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1Tests/Pods-BoonDemo1Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		E302926F2BC63975F701DA35 /* Pods-BoonDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.debug.xcconfig"; sourceTree = "<group>"; };
+		E79EE3E47F47D80BAE2689AE /* Pods-BoonDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		E85B3051226BEECC00F0726B /* InsightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightViewController.swift; sourceTree = "<group>"; };
 		E85B3053226BF55D00F0726B /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
 		E85B3055226BFA6100F0726B /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
@@ -74,6 +91,13 @@
 		E8A2D33E226CDB160047A654 /* Video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Video.MOV; sourceTree = "<group>"; };
 		E8A2D340226CE8920047A654 /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightTableViewCell.swift; sourceTree = "<group>"; };
+		F1081A892274BCB20043F53B /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
+		F1081A8D2274BD7B0043F53B /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
+		F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewCell.swift; sourceTree = "<group>"; };
+		F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPortfolioViewController.swift; sourceTree = "<group>"; };
+		F142915E227395B100282058 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInsightViewController.swift; sourceTree = "<group>"; };
+		FE5474F98D9183912BD2B395 /* Pods_BoonDemo1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoonDemo1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E001BBAEB2CCC836CA5CE9D5 /* Pods_BoonDemo1.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2AD1EF3AADBF2B04E6E91AAD /* Pods_BoonDemo1Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,12 +121,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E98375B873DAC0830CE4B53 /* Pods_BoonDemo1UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		791329646409C41C92FCF200 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E302926F2BC63975F701DA35 /* Pods-BoonDemo1.debug.xcconfig */,
+				E79EE3E47F47D80BAE2689AE /* Pods-BoonDemo1.release.xcconfig */,
+				E28FB70336181BFEA152C48E /* Pods-BoonDemo1Tests.debug.xcconfig */,
+				4A0528310E3EA23296ED5123 /* Pods-BoonDemo1Tests.release.xcconfig */,
+				25F995B60C3A73128824F585 /* Pods-BoonDemo1UITests.debug.xcconfig */,
+				09492DE19927713E25E17D86 /* Pods-BoonDemo1UITests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		7F8F02C39DB6EFF84CFDDE67 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */,
+				876C7E4A5CCEF5C7A0C2B35F /* Pods_BoonDemo1Tests.framework */,
+				FE5474F98D9183912BD2B395 /* Pods_BoonDemo1UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E85F0C1B226B679E0078310F = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +159,8 @@
 				E85F0C3B226B679E0078310F /* BoonDemo1Tests */,
 				E85F0C46226B679E0078310F /* BoonDemo1UITests */,
 				E85F0C25226B679E0078310F /* Products */,
+				791329646409C41C92FCF200 /* Pods */,
+				7F8F02C39DB6EFF84CFDDE67 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,14 +179,20 @@
 			children = (
 				E85F0C27226B679E0078310F /* AppDelegate.swift */,
 				E85F0C29226B679E0078310F /* ViewController.swift */,
-				E85B3051226BEECC00F0726B /* InsightViewController.swift */,
 				E85B3053226BF55D00F0726B /* VideoViewController.swift */,
 				E85B3055226BFA6100F0726B /* VideoCell.swift */,
 				E85B3057226C01FC00F0726B /* Video.swift */,
 				E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */,
+				E85B3051226BEECC00F0726B /* InsightViewController.swift */,
 				E8A2D340226CE8920047A654 /* Insight.swift */,
 				E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */,
+				F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */,
+				F1081A892274BCB20043F53B /* PortfolioViewController.swift */,
+				F1081A8D2274BD7B0043F53B /* Portfolio.swift */,
+				F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */,
+				F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */,
 				E8A2D33E226CDB160047A654 /* Video.MOV */,
+				F142915E227395B100282058 /* GoogleService-Info.plist */,
 				E85F0C2B226B679E0078310F /* Main.storyboard */,
 				E85F0C2E226B679E0078310F /* Assets.xcassets */,
 				E85F0C30226B679E0078310F /* LaunchScreen.storyboard */,
@@ -186,9 +244,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E85F0C4C226B679E0078310F /* Build configuration list for PBXNativeTarget "BoonDemo1" */;
 			buildPhases = (
+				D385A78A0522D9B298401225 /* [CP] Check Pods Manifest.lock */,
 				E85F0C20226B679E0078310F /* Sources */,
 				E85F0C21226B679E0078310F /* Frameworks */,
 				E85F0C22226B679E0078310F /* Resources */,
+				CBF4E225A0817CACD4528CFB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -203,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E85F0C4F226B679E0078310F /* Build configuration list for PBXNativeTarget "BoonDemo1Tests" */;
 			buildPhases = (
+				2699A1E3A335214B83F76F30 /* [CP] Check Pods Manifest.lock */,
 				E85F0C34226B679E0078310F /* Sources */,
 				E85F0C35226B679E0078310F /* Frameworks */,
 				E85F0C36226B679E0078310F /* Resources */,
@@ -221,6 +282,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E85F0C52226B679E0078310F /* Build configuration list for PBXNativeTarget "BoonDemo1UITests" */;
 			buildPhases = (
+				D8EACDD9D708C60E9F1DC752 /* [CP] Check Pods Manifest.lock */,
 				E85F0C3F226B679E0078310F /* Sources */,
 				E85F0C40226B679E0078310F /* Frameworks */,
 				E85F0C41226B679E0078310F /* Resources */,
@@ -242,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = "Shreya Navelkar";
 				TargetAttributes = {
 					E85F0C23226B679E0078310F = {
@@ -288,6 +350,7 @@
 			files = (
 				E8A2D33F226CDB160047A654 /* Video.MOV in Resources */,
 				E85F0C32226B679E0078310F /* LaunchScreen.storyboard in Resources */,
+				F142915F227395B100282058 /* GoogleService-Info.plist in Resources */,
 				E85F0C2F226B679E0078310F /* Assets.xcassets in Resources */,
 				E85F0C2D226B679E0078310F /* Main.storyboard in Resources */,
 			);
@@ -309,20 +372,122 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2699A1E3A335214B83F76F30 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoonDemo1Tests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBF4E225A0817CACD4528CFB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/RHSideButtons/RHSideButtons.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RHSideButtons.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D385A78A0522D9B298401225 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoonDemo1-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D8EACDD9D708C60E9F1DC752 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-BoonDemo1UITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E85F0C20226B679E0078310F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1081A8E2274BD7B0043F53B /* Portfolio.swift in Sources */,
 				E85B3056226BFA6100F0726B /* VideoCell.swift in Sources */,
 				E85B3058226C01FC00F0726B /* Video.swift in Sources */,
 				E85F0C2A226B679E0078310F /* ViewController.swift in Sources */,
 				E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */,
+				F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */,
+				F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */,
 				E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */,
 				E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */,
 				E85B305A226CD1C700F0726B /* PlayVideoViewController.swift in Sources */,
 				E8A2D341226CE8920047A654 /* Insight.swift in Sources */,
+				F1081A8A2274BCB20043F53B /* PortfolioViewController.swift in Sources */,
 				E85F0C28226B679E0078310F /* AppDelegate.swift in Sources */,
+				F1081A902274BDAD0043F53B /* PortfolioTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +556,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -398,6 +564,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -448,6 +615,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -455,6 +623,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -486,13 +655,14 @@
 		};
 		E85F0C4D226B679E0078310F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E302926F2BC63975F701DA35 /* Pods-BoonDemo1.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24FKBJ98M3;
+				DEVELOPMENT_TEAM = DXB32R6J2A;
 				INFOPLIST_FILE = BoonDemo1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.BoonDemo1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -501,13 +671,14 @@
 		};
 		E85F0C4E226B679E0078310F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E79EE3E47F47D80BAE2689AE /* Pods-BoonDemo1.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24FKBJ98M3;
+				DEVELOPMENT_TEAM = DXB32R6J2A;
 				INFOPLIST_FILE = BoonDemo1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.BoonDemo1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -516,6 +687,7 @@
 		};
 		E85F0C50226B679E0078310F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E28FB70336181BFEA152C48E /* Pods-BoonDemo1Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -533,6 +705,7 @@
 		};
 		E85F0C51226B679E0078310F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A0528310E3EA23296ED5123 /* Pods-BoonDemo1Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -550,6 +723,7 @@
 		};
 		E85F0C53226B679E0078310F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 25F995B60C3A73128824F585 /* Pods-BoonDemo1UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -566,6 +740,7 @@
 		};
 		E85F0C54226B679E0078310F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 09492DE19927713E25E17D86 /* Pods-BoonDemo1UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
