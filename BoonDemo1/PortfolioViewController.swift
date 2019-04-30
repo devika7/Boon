@@ -20,11 +20,11 @@ class PortfolioViewController: UIViewController {
     func createPortfolio() -> [Portfolio]{
         var tempPortfolios:[Portfolio] = []
         
-        let portfolio1 = Portfolio(title: "Walmart", price: "+2.50", moneyInvested : "320")
-        let portfolio5 = Portfolio(title: "Microsoft", price: "+3.45", moneyInvested: "300")
-        let portfolio2 = Portfolio(title: "Twitter", price: "-0.25", moneyInvested: "100")
-        let portfolio3 = Portfolio(title: "Amazon", price: "+0.67", moneyInvested: "150")
-        let portfolio4 = Portfolio(title: "Lulu", price: "+0.89", moneyInvested: "130")
+        let portfolio1 = Portfolio(title: "WMT", price: "+2.50", moneyInvested : "320")
+        let portfolio5 = Portfolio(title: "MSFT", price: "+3.45", moneyInvested: "300")
+        let portfolio2 = Portfolio(title: "TWTR", price: "-0.25", moneyInvested: "100")
+        let portfolio3 = Portfolio(title: "AMZN", price: "+0.67", moneyInvested: "150")
+        let portfolio4 = Portfolio(title: "LULU", price: "+0.89", moneyInvested: "130")
         tempPortfolios.append(portfolio1)
         tempPortfolios.append(portfolio2)
         tempPortfolios.append(portfolio3)

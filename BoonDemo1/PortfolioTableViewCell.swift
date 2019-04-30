@@ -18,7 +18,7 @@ class PortfolioTableViewCell: UITableViewCell {
         stockTitle.text = portfolio.stockTitle
         let stockPriceFloat = (portfolio.stockPrice as NSString).floatValue
         if stockPriceFloat < 0 {
-            let color1 = hexStringToUIColor(hex : "#47BDA1")
+            let color1 = hexStringToUIColor(hex : "#F93324")
             stockPrice.backgroundColor = color1
         }else if stockPriceFloat > 3.0{
             let color2 = hexStringToUIColor(hex : "#47BDA1")

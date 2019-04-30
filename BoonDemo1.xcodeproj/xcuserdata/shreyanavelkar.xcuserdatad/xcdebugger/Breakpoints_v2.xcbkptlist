@@ -6,11 +6,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BoonDemo1/ViewController.swift"
-            timestampString = "577481988.8578"
+            timestampString = "578285099.0620379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "8"
@@ -19,14 +19,14 @@
             landmarkType = "0">
             <Locations>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BoonDemo1.ViewController.__deallocating_deinit"
                   moduleName = "BoonDemo1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shreyanavelkar/Desktop/BoonDemo1/BoonDemo1/ViewController.swift"
-                  timestampString = "577482293.407802"
+                  urlString = "file:///Users/shreyanavelkar/Desktop/Boon/BoonDemo1/ViewController.swift"
+                  timestampString = "578285099.339573"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -34,14 +34,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BoonDemo1.ViewController.__allocating_init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; BoonDemo1.ViewController"
                   moduleName = "BoonDemo1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shreyanavelkar/Desktop/BoonDemo1/BoonDemo1/ViewController.swift"
-                  timestampString = "577482293.41092"
+                  urlString = "file:///Users/shreyanavelkar/Desktop/Boon/BoonDemo1/ViewController.swift"
+                  timestampString = "578285099.3445849"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -49,14 +49,14 @@
                   offsetFromSymbolStart = "12">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BoonDemo1.ViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__ObjC.Bundle&gt;) -&gt; BoonDemo1.ViewController"
                   moduleName = "BoonDemo1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shreyanavelkar/Desktop/BoonDemo1/BoonDemo1/ViewController.swift"
-                  timestampString = "577482293.414759"
+                  urlString = "file:///Users/shreyanavelkar/Desktop/Boon/BoonDemo1/ViewController.swift"
+                  timestampString = "578285099.348821"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -64,14 +64,14 @@
                   offsetFromSymbolStart = "283">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BoonDemo1.ViewController.__allocating_init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BoonDemo1.ViewController&gt;"
                   moduleName = "BoonDemo1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shreyanavelkar/Desktop/BoonDemo1/BoonDemo1/ViewController.swift"
-                  timestampString = "577482293.419898"
+                  urlString = "file:///Users/shreyanavelkar/Desktop/Boon/BoonDemo1/ViewController.swift"
+                  timestampString = "578285099.3561291"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "0"
@@ -79,14 +79,14 @@
                   offsetFromSymbolStart = "4">
                </Location>
                <Location
-                  shouldBeEnabled = "Yes"
+                  shouldBeEnabled = "No"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "BoonDemo1.ViewController.init(coder: __ObjC.NSCoder) -&gt; Swift.Optional&lt;BoonDemo1.ViewController&gt;"
                   moduleName = "BoonDemo1"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shreyanavelkar/Desktop/BoonDemo1/BoonDemo1/ViewController.swift"
-                  timestampString = "577482293.424078"
+                  urlString = "file:///Users/shreyanavelkar/Desktop/Boon/BoonDemo1/ViewController.swift"
+                  timestampString = "578285099.360641"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "11"
@@ -99,11 +99,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "BoonDemo1/ViewController.swift"
-            timestampString = "577481988.858096"
+            timestampString = "578285099.072965"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
