@@ -178,7 +178,7 @@
                                                         <constraint firstAttribute="height" constant="128" id="bik-Cj-WK5"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-tB-xf2">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-tB-xf2">
                                                     <rect key="frame" x="183" y="71" width="177" height="128"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -279,7 +279,7 @@
                                                     </constraints>
                                                     <viewLayoutGuide key="safeArea" id="det-gv-JVJ"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="otr-PC-kIW">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="otr-PC-kIW">
                                                     <rect key="frame" x="179" y="40" width="181" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="eo0-mV-cXY"/>
@@ -289,6 +289,9 @@
                                                     <color key="textColor" white="0.34498813010000001" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="videoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="9zk-U9-H9f">
+                                                    <rect key="frame" x="72" y="97" width="46" height="37"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="6Xk-Dj-Kje" firstAttribute="top" secondItem="72U-Bm-qxv" secondAttribute="topMargin" constant="29" id="1zW-Dd-h08"/>
@@ -296,8 +299,12 @@
                                                 <constraint firstItem="otr-PC-kIW" firstAttribute="leading" secondItem="6Xk-Dj-Kje" secondAttribute="trailing" constant="9" id="4Us-x1-cro"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="6Xk-Dj-Kje" secondAttribute="bottom" constant="25" id="4nx-bm-Rle"/>
                                                 <constraint firstItem="6Xk-Dj-Kje" firstAttribute="leading" secondItem="72U-Bm-qxv" secondAttribute="leadingMargin" constant="5" id="C4g-1s-4Of"/>
+                                                <constraint firstItem="9zk-U9-H9f" firstAttribute="top" secondItem="72U-Bm-qxv" secondAttribute="topMargin" constant="86" id="FTO-ss-zN0"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="otr-PC-kIW" secondAttribute="bottom" constant="25" id="O5A-Dk-LHj"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="9zk-U9-H9f" secondAttribute="bottom" constant="81" id="U9g-Fi-UaP"/>
+                                                <constraint firstItem="9zk-U9-H9f" firstAttribute="leading" secondItem="72U-Bm-qxv" secondAttribute="leadingMargin" constant="57" id="bhW-DR-QIv"/>
                                                 <constraint firstItem="otr-PC-kIW" firstAttribute="trailing" secondItem="72U-Bm-qxv" secondAttribute="trailingMargin" id="dIT-4q-Kvj"/>
+                                                <constraint firstItem="otr-PC-kIW" firstAttribute="leading" secondItem="9zk-U9-H9f" secondAttribute="trailing" constant="61" id="kRw-If-WoX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -485,7 +492,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="XGN-Xy-ta2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="selectedImageTintColor" red="0.27843137254901962" green="0.74117647058823533" blue="0.63137254901960782" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.2784313725" green="0.74117647060000003" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="foj-nE-Nxr" kind="relationship" relationship="viewControllers" id="H4Z-tP-rz3"/>
@@ -569,7 +576,7 @@
         <scene sceneID="oyC-IU-dmS">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="foj-nE-Nxr" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Portfolio" selectedImage="portfolio" springLoaded="YES" id="lTJ-5M-WBc">
+                    <tabBarItem key="tabBarItem" title="" image="portfolio" selectedImage="portfolio" springLoaded="YES" id="lTJ-5M-WBc">
                         <inset key="imageInsets" minX="0.0" minY="2" maxX="0.0" maxY="-8"/>
                         <inset key="largeContentSizeImageInsets" minX="0.0" minY="28" maxX="0.0" maxY="9"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
@@ -642,12 +649,12 @@
         <image name="InputBox" width="308" height="258"/>
         <image name="Insights" width="30" height="44"/>
         <image name="LogIn" width="210" height="81"/>
-        <image name="Portfolio" width="47" height="35"/>
         <image name="Scoops" width="27" height="47"/>
         <image name="SignUp" width="431" height="106"/>
         <image name="graph" width="746" height="412"/>
         <image name="portfolio" width="47" height="35"/>
         <image name="undraw_mobile_app_0irr" width="1210" height="914"/>
+        <image name="videoIcon" width="32" height="22"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Zz7-iO-ut0"/>
