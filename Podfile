@@ -6,9 +6,10 @@ target 'BoonDemo1' do
   use_frameworks!
 
   # Pods for BoonDemo1
-#  pod 'SDWebImage'
-#  pod 'Firebase/Core'
-#  pod 'RHSideButtons'
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Database'
 
   target 'BoonDemo1Tests' do
     inherit! :search_paths

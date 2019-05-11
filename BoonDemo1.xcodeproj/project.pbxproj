@@ -29,6 +29,13 @@
 		F1081A8E2274BD7B0043F53B /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A8D2274BD7B0043F53B /* Portfolio.swift */; };
 		F1081A902274BDAD0043F53B /* PortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */; };
 		F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */; };
+		F13F419E227E1BF10043D9E7 /* SignUpAdditionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F419D227E1BF10043D9E7 /* SignUpAdditionalViewController.swift */; };
+		F13F41A0227E2E590043D9E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F419F227E2E590043D9E7 /* TabBarViewController.swift */; };
+		F13F41A4227FBD0E0043D9E7 /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F41A3227FBD0D0043D9E7 /* SnapshotExtensions.swift */; };
+		F168BAD9227DDB4700A16F8C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F168BAD8227DDB4700A16F8C /* GoogleService-Info.plist */; };
+		F168BADB227DE61600A16F8C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168BADA227DE61600A16F8C /* LogInViewController.swift */; };
+		F168BADD227DE62E00A16F8C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168BADC227DE62E00A16F8C /* SignUpViewController.swift */; };
+		F168BADF227DEDF900A16F8C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168BADE227DEDF900A16F8C /* InitialViewController.swift */; };
 		F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +101,31 @@
 		F1081A8D2274BD7B0043F53B /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewCell.swift; sourceTree = "<group>"; };
 		F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPortfolioViewController.swift; sourceTree = "<group>"; };
+		F13F419D227E1BF10043D9E7 /* SignUpAdditionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAdditionalViewController.swift; sourceTree = "<group>"; };
+		F13F419F227E2E590043D9E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		F13F41A3227FBD0D0043D9E7 /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
+		F168BAD8227DDB4700A16F8C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F168BADA227DE61600A16F8C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		F168BADC227DE62E00A16F8C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		F168BADE227DEDF900A16F8C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F1CB1C39227D355E00FF0D3A /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-BlackItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C3A227D355E00FF0D3A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../Downloads/Montserrat/Montserrat-Light.ttf"; sourceTree = "<group>"; };
+		F1CB1C3B227D355E00FF0D3A /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "../../Downloads/Montserrat/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		F1CB1C3C227D355E00FF0D3A /* Montserrat-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraLight.ttf"; path = "../../Downloads/Montserrat/Montserrat-ExtraLight.ttf"; sourceTree = "<group>"; };
+		F1CB1C3D227D355E00FF0D3A /* Montserrat-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Black.ttf"; path = "../../Downloads/Montserrat/Montserrat-Black.ttf"; sourceTree = "<group>"; };
+		F1CB1C3E227D355E00FF0D3A /* Montserrat-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-LightItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-LightItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C3F227D355F00FF0D3A /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBold.ttf"; path = "../../Downloads/Montserrat/Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		F1CB1C40227D355F00FF0D3A /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Regular.ttf"; path = "../../Downloads/Montserrat/Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		F1CB1C41227D355F00FF0D3A /* Montserrat-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-SemiBoldItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C42227D355F00FF0D3A /* Montserrat-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-BoldItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-BoldItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C43227D355F00FF0D3A /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Bold.ttf"; path = "../../Downloads/Montserrat/Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		F1CB1C44227D355F00FF0D3A /* Montserrat-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBoldItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C45227D355F00FF0D3A /* Montserrat-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-MediumItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-MediumItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C46227D355F00FF0D3A /* Montserrat-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ThinItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-ThinItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C47227D355F00FF0D3A /* Montserrat-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraLightItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		F1CB1C48227D355F00FF0D3A /* Montserrat-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Thin.ttf"; path = "../../Downloads/Montserrat/Montserrat-Thin.ttf"; sourceTree = "<group>"; };
+		F1CB1C49227D355F00FF0D3A /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Medium.ttf"; path = "../../Downloads/Montserrat/Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		F1CB1C4A227D355F00FF0D3A /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Italic.ttf"; path = "../../Downloads/Montserrat/Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewInsightViewController.swift; sourceTree = "<group>"; };
 		FE5474F98D9183912BD2B395 /* Pods_BoonDemo1UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoonDemo1UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -175,24 +207,15 @@
 		E85F0C26226B679E0078310F /* BoonDemo1 */ = {
 			isa = PBXGroup;
 			children = (
+				F168BAD7227DD95300A16F8C /* Controller */,
+				F168BAD6227DD94A00A16F8C /* View */,
+				F168BAD5227DD93000A16F8C /* Model */,
 				E85F0C27226B679E0078310F /* AppDelegate.swift */,
-				E85F0C29226B679E0078310F /* ViewController.swift */,
-				E85B3053226BF55D00F0726B /* VideoViewController.swift */,
-				E85B3055226BFA6100F0726B /* VideoCell.swift */,
-				E85B3057226C01FC00F0726B /* Video.swift */,
-				E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */,
-				E85B3051226BEECC00F0726B /* InsightViewController.swift */,
-				E8A2D340226CE8920047A654 /* Insight.swift */,
-				E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */,
-				F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */,
-				F1081A892274BCB20043F53B /* PortfolioViewController.swift */,
-				F1081A8D2274BD7B0043F53B /* Portfolio.swift */,
-				F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */,
-				F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */,
 				E8A2D33E226CDB160047A654 /* Video.MOV */,
 				E85F0C2B226B679E0078310F /* Main.storyboard */,
 				E85F0C2E226B679E0078310F /* Assets.xcassets */,
 				E85F0C30226B679E0078310F /* LaunchScreen.storyboard */,
+				F168BAD8227DDB4700A16F8C /* GoogleService-Info.plist */,
 				E85F0C33226B679E0078310F /* Info.plist */,
 			);
 			path = BoonDemo1;
@@ -222,6 +245,24 @@
 				E85F0C71226B85F70078310F /* LICENSE.txt */,
 				E85F0C70226B85F70078310F /* OpenSans-Bold.ttf */,
 				E85F0C72226B85F70078310F /* OpenSans-BoldItalic.ttf */,
+				F1CB1C3D227D355E00FF0D3A /* Montserrat-Black.ttf */,
+				F1CB1C39227D355E00FF0D3A /* Montserrat-BlackItalic.ttf */,
+				F1CB1C43227D355F00FF0D3A /* Montserrat-Bold.ttf */,
+				F1CB1C42227D355F00FF0D3A /* Montserrat-BoldItalic.ttf */,
+				F1CB1C3B227D355E00FF0D3A /* Montserrat-ExtraBold.ttf */,
+				F1CB1C44227D355F00FF0D3A /* Montserrat-ExtraBoldItalic.ttf */,
+				F1CB1C3C227D355E00FF0D3A /* Montserrat-ExtraLight.ttf */,
+				F1CB1C47227D355F00FF0D3A /* Montserrat-ExtraLightItalic.ttf */,
+				F1CB1C4A227D355F00FF0D3A /* Montserrat-Italic.ttf */,
+				F1CB1C3A227D355E00FF0D3A /* Montserrat-Light.ttf */,
+				F1CB1C3E227D355E00FF0D3A /* Montserrat-LightItalic.ttf */,
+				F1CB1C49227D355F00FF0D3A /* Montserrat-Medium.ttf */,
+				F1CB1C45227D355F00FF0D3A /* Montserrat-MediumItalic.ttf */,
+				F1CB1C40227D355F00FF0D3A /* Montserrat-Regular.ttf */,
+				F1CB1C3F227D355F00FF0D3A /* Montserrat-SemiBold.ttf */,
+				F1CB1C41227D355F00FF0D3A /* Montserrat-SemiBoldItalic.ttf */,
+				F1CB1C48227D355F00FF0D3A /* Montserrat-Thin.ttf */,
+				F1CB1C46227D355F00FF0D3A /* Montserrat-ThinItalic.ttf */,
 				E85F0C6D226B85F60078310F /* OpenSans-ExtraBold.ttf */,
 				E85F0C6F226B85F70078310F /* OpenSans-ExtraBoldItalic.ttf */,
 				E85F0C75226B85F80078310F /* OpenSans-Italic.ttf */,
@@ -232,6 +273,46 @@
 				E85F0C6E226B85F60078310F /* OpenSans-SemiBoldItalic.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		F168BAD5227DD93000A16F8C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E8A2D340226CE8920047A654 /* Insight.swift */,
+				E85B3057226C01FC00F0726B /* Video.swift */,
+				F1081A8D2274BD7B0043F53B /* Portfolio.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F168BAD6227DD94A00A16F8C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E85B3055226BFA6100F0726B /* VideoCell.swift */,
+				F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */,
+				E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F168BAD7227DD95300A16F8C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E85F0C29226B679E0078310F /* ViewController.swift */,
+				E85B3053226BF55D00F0726B /* VideoViewController.swift */,
+				E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */,
+				E85B3051226BEECC00F0726B /* InsightViewController.swift */,
+				F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */,
+				F1081A892274BCB20043F53B /* PortfolioViewController.swift */,
+				F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */,
+				F168BADA227DE61600A16F8C /* LogInViewController.swift */,
+				F168BADC227DE62E00A16F8C /* SignUpViewController.swift */,
+				F168BADE227DEDF900A16F8C /* InitialViewController.swift */,
+				F13F419D227E1BF10043D9E7 /* SignUpAdditionalViewController.swift */,
+				F13F419F227E2E590043D9E7 /* TabBarViewController.swift */,
+				F13F41A3227FBD0D0043D9E7 /* SnapshotExtensions.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -347,6 +428,7 @@
 			files = (
 				E8A2D33F226CDB160047A654 /* Video.MOV in Resources */,
 				E85F0C32226B679E0078310F /* LaunchScreen.storyboard in Resources */,
+				F168BAD9227DDB4700A16F8C /* GoogleService-Info.plist in Resources */,
 				E85F0C2F226B679E0078310F /* Assets.xcassets in Resources */,
 				E85F0C2D226B679E0078310F /* Main.storyboard in Resources */,
 			);
@@ -394,16 +476,24 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/RHSideButtons/RHSideButtons.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-C++/grpcpp.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl_grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RHSideButtons.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpcpp.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,8 +551,14 @@
 				E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */,
 				F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */,
 				F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */,
+				F13F41A4227FBD0E0043D9E7 /* SnapshotExtensions.swift in Sources */,
+				F13F419E227E1BF10043D9E7 /* SignUpAdditionalViewController.swift in Sources */,
+				F168BADF227DEDF900A16F8C /* InitialViewController.swift in Sources */,
 				E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */,
+				F168BADB227DE61600A16F8C /* LogInViewController.swift in Sources */,
 				E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */,
+				F168BADD227DE62E00A16F8C /* SignUpViewController.swift in Sources */,
+				F13F41A0227E2E590043D9E7 /* TabBarViewController.swift in Sources */,
 				E85B305A226CD1C700F0726B /* PlayVideoViewController.swift in Sources */,
 				E8A2D341226CE8920047A654 /* Insight.swift in Sources */,
 				F1081A8A2274BCB20043F53B /* PortfolioViewController.swift in Sources */,
@@ -639,10 +735,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24FKBJ98M3;
+				DEVELOPMENT_TEAM = DXB32R6J2A;
 				INFOPLIST_FILE = BoonDemo1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -655,10 +751,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24FKBJ98M3;
+				DEVELOPMENT_TEAM = DXB32R6J2A;
 				INFOPLIST_FILE = BoonDemo1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
