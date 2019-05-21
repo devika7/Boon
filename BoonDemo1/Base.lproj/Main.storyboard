@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YdI-mZ-gc0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="YdI-mZ-gc0">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -714,14 +715,14 @@
                                 <rect key="frame" x="47" y="232.5" width="281" height="385.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="66" id="cV6-Nm-4De" customClass="PortfolioTableViewCell" customModule="BoonDemo1" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioTableViewCell" rowHeight="66" id="cV6-Nm-4De" customClass="PortfolioTableViewCell" customModule="BoonDemo1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="281" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV6-Nm-4De" id="j6D-nM-2Q1">
                                             <rect key="frame" x="0.0" y="0.0" width="281" height="65.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ4-nA-aSU">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ4-nA-aSU">
                                                     <rect key="frame" x="194" y="23" width="67" height="26"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <nil key="textColor"/>
@@ -757,8 +758,8 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
-                                    <outlet property="dataSource" destination="zX5-gr-CcC" id="wtF-Yo-SPk"/>
-                                    <outlet property="delegate" destination="zX5-gr-CcC" id="joL-IZ-9SW"/>
+                                    <outlet property="dataSource" destination="zX5-gr-CcC" id="5xA-Li-jNm"/>
+                                    <outlet property="delegate" destination="zX5-gr-CcC" id="VN8-ya-oeR"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -785,6 +786,9 @@
                         <viewLayoutGuide key="safeArea" id="62G-3Z-nyg"/>
                     </view>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="CWv-oL-1Ro"/>
+                    <connections>
+                        <outlet property="tableView" destination="OtK-ff-VbY" id="XIU-9U-A1D"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eyD-aB-naW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

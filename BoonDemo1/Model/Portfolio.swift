@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Portfolio{
+class Portfolio {
     var ticker : String
     var dailyReturns : Double
     
@@ -17,4 +17,5 @@ class Portfolio{
         self.ticker = ticker
         self.dailyReturns = dailyReturns
     }
+    
 }

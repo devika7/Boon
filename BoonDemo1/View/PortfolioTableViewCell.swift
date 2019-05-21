@@ -23,6 +23,8 @@ class PortfolioTableViewCell: UITableViewCell {
              let color3 = hexStringToUIColor(hex : "#C2F4E4")
                 dailyReturnDisplayField.backgroundColor = color3
         }
+        dailyReturnDisplayField.layer.masksToBounds = true
+        dailyReturnDisplayField.layer.cornerRadius = 10
         dailyReturnDisplayField.text = "\(dailyReturns)%"
 }
     func hexStringToUIColor (hex:String) -> UIColor {
@@ -46,5 +48,4 @@ class PortfolioTableViewCell: UITableViewCell {
             alpha: CGFloat(1.0)
         )
     }
-
 }
