@@ -14,9 +14,9 @@ class PortfolioTableViewCell: UITableViewCell {
     
     
     func setPortfolio(portfolio: Portfolio){
-        tickerField.text = portfolio.ticker
-       let dailyReturns = String(format:"%.2f", portfolio.dailyReturns)
-        if portfolio.dailyReturns < 0 {
+        tickerField.text = portfolio.Ticker
+       let dailyReturns = String(format:"%.2f", (portfolio.Return * 100))
+        if portfolio.Return < 0 {
             let color1 = hexStringToUIColor(hex : "#F8A1A1")
             dailyReturnDisplayField.backgroundColor = color1
         }else{

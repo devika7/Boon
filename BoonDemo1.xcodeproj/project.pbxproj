@@ -9,10 +9,14 @@
 /* Begin PBXBuildFile section */
 		2AD1EF3AADBF2B04E6E91AAD /* Pods_BoonDemo1Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 876C7E4A5CCEF5C7A0C2B35F /* Pods_BoonDemo1Tests.framework */; };
 		7E98375B873DAC0830CE4B53 /* Pods_BoonDemo1UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE5474F98D9183912BD2B395 /* Pods_BoonDemo1UITests.framework */; };
+		B5D9F17D229C82F30013CD8C /* Video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = B5D9F17C229C82F30013CD8C /* Video.MOV */; };
+		B5D9F17F229C8C2C0013CD8C /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F17E229C8C2C0013CD8C /* Podcast.swift */; };
+		B5D9F181229CAFF00013CD8C /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */; };
+		B5D9F183229CEF2E0013CD8C /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */; };
+		B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */; };
 		E001BBAEB2CCC836CA5CE9D5 /* Pods_BoonDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */; };
 		E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3051226BEECC00F0726B /* InsightViewController.swift */; };
 		E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3053226BF55D00F0726B /* VideoViewController.swift */; };
-		E85B3056226BFA6100F0726B /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3055226BFA6100F0726B /* VideoCell.swift */; };
 		E85B3058226C01FC00F0726B /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3057226C01FC00F0726B /* Video.swift */; };
 		E85B305A226CD1C700F0726B /* PlayVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */; };
 		E85F0C28226B679E0078310F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F0C27226B679E0078310F /* AppDelegate.swift */; };
@@ -23,7 +27,6 @@
 		E85F0C3D226B679E0078310F /* BoonDemo1Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F0C3C226B679E0078310F /* BoonDemo1Tests.swift */; };
 		E85F0C48226B679E0078310F /* BoonDemo1UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85F0C47226B679E0078310F /* BoonDemo1UITests.swift */; };
 		E88015452290567000444EBD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E88015442290566F00444EBD /* GoogleService-Info.plist */; };
-		E880154722905C2F00444EBD /* Video.MOV in Resources */ = {isa = PBXBuildFile; fileRef = E880154622905C2E00444EBD /* Video.MOV */; };
 		E8A2D341226CE8920047A654 /* Insight.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2D340226CE8920047A654 /* Insight.swift */; };
 		E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */; };
 		F1081A8A2274BCB20043F53B /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A892274BCB20043F53B /* PortfolioViewController.swift */; };
@@ -62,12 +65,16 @@
 		3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoonDemo1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A0528310E3EA23296ED5123 /* Pods-BoonDemo1Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1Tests.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1Tests/Pods-BoonDemo1Tests.release.xcconfig"; sourceTree = "<group>"; };
 		876C7E4A5CCEF5C7A0C2B35F /* Pods_BoonDemo1Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoonDemo1Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5D9F17C229C82F30013CD8C /* Video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; name = Video.MOV; path = ../../Downloads/Video.MOV; sourceTree = "<group>"; };
+		B5D9F17E229C8C2C0013CD8C /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
+		B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
+		B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPodcastViewController.swift; sourceTree = "<group>"; };
 		E28FB70336181BFEA152C48E /* Pods-BoonDemo1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1Tests.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1Tests/Pods-BoonDemo1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E302926F2BC63975F701DA35 /* Pods-BoonDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.debug.xcconfig"; sourceTree = "<group>"; };
 		E79EE3E47F47D80BAE2689AE /* Pods-BoonDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.release.xcconfig"; sourceTree = "<group>"; };
 		E85B3051226BEECC00F0726B /* InsightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightViewController.swift; sourceTree = "<group>"; };
 		E85B3053226BF55D00F0726B /* VideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoViewController.swift; sourceTree = "<group>"; };
-		E85B3055226BFA6100F0726B /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
 		E85B3057226C01FC00F0726B /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
 		E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVideoViewController.swift; sourceTree = "<group>"; };
 		E85F0C24226B679E0078310F /* BoonDemo1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoonDemo1.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +102,6 @@
 		E85F0C75226B85F80078310F /* OpenSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Italic.ttf"; sourceTree = "<group>"; };
 		E85F0C76226B85F80078310F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
 		E88015442290566F00444EBD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		E880154622905C2E00444EBD /* Video.MOV */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Video.MOV; sourceTree = "<group>"; };
 		E8A2D340226CE8920047A654 /* Insight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Insight.swift; sourceTree = "<group>"; };
 		E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsightTableViewCell.swift; sourceTree = "<group>"; };
 		F1081A892274BCB20043F53B /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
@@ -213,7 +219,7 @@
 				E85F0C27226B679E0078310F /* AppDelegate.swift */,
 				E85F0C2B226B679E0078310F /* Main.storyboard */,
 				E85F0C2E226B679E0078310F /* Assets.xcassets */,
-				E880154622905C2E00444EBD /* Video.MOV */,
+				B5D9F17C229C82F30013CD8C /* Video.MOV */,
 				E85F0C30226B679E0078310F /* LaunchScreen.storyboard */,
 				E85F0C33226B679E0078310F /* Info.plist */,
 				E88015442290566F00444EBD /* GoogleService-Info.plist */,
@@ -281,6 +287,7 @@
 				E8A2D340226CE8920047A654 /* Insight.swift */,
 				E85B3057226C01FC00F0726B /* Video.swift */,
 				F1081A8D2274BD7B0043F53B /* Portfolio.swift */,
+				B5D9F17E229C8C2C0013CD8C /* Podcast.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -288,9 +295,10 @@
 		F168BAD6227DD94A00A16F8C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E85B3055226BFA6100F0726B /* VideoCell.swift */,
 				F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */,
 				E8A2D342226CE9590047A654 /* InsightTableViewCell.swift */,
+				B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */,
+				B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -301,6 +309,7 @@
 				E85F0C29226B679E0078310F /* ViewController.swift */,
 				E85B3053226BF55D00F0726B /* VideoViewController.swift */,
 				E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */,
+				B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */,
 				E85B3051226BEECC00F0726B /* InsightViewController.swift */,
 				F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */,
 				F1081A892274BCB20043F53B /* PortfolioViewController.swift */,
@@ -428,8 +437,8 @@
 			files = (
 				E85F0C32226B679E0078310F /* LaunchScreen.storyboard in Resources */,
 				E88015452290567000444EBD /* GoogleService-Info.plist in Resources */,
+				B5D9F17D229C82F30013CD8C /* Video.MOV in Resources */,
 				E85F0C2F226B679E0078310F /* Assets.xcassets in Resources */,
-				E880154722905C2F00444EBD /* Video.MOV in Resources */,
 				E85F0C2D226B679E0078310F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -544,14 +553,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5D9F181229CAFF00013CD8C /* VideoCollectionViewCell.swift in Sources */,
 				F1081A8E2274BD7B0043F53B /* Portfolio.swift in Sources */,
-				E85B3056226BFA6100F0726B /* VideoCell.swift in Sources */,
 				E85B3058226C01FC00F0726B /* Video.swift in Sources */,
 				E85F0C2A226B679E0078310F /* ViewController.swift in Sources */,
+				B5D9F183229CEF2E0013CD8C /* PodcastTableViewCell.swift in Sources */,
 				E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */,
 				F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */,
 				F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */,
 				F13F41A4227FBD0E0043D9E7 /* SnapshotExtensions.swift in Sources */,
+				B5D9F17F229C8C2C0013CD8C /* Podcast.swift in Sources */,
+				B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */,
 				F13F419E227E1BF10043D9E7 /* SignUpAdditionalViewController.swift in Sources */,
 				F168BADF227DEDF900A16F8C /* InitialViewController.swift in Sources */,
 				E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */,

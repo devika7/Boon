@@ -9,13 +9,30 @@
 import Foundation
 import UIKit
 
-class Portfolio {
-    var ticker : String
-    var dailyReturns : Double
+class Portfolios: Decodable {
+    let portfolios: [Portfolio]
     
-    init(ticker : String,  dailyReturns : Double){
-        self.ticker = ticker
-        self.dailyReturns = dailyReturns
+    
+    init(portfolios:[Portfolio]){
+        self.portfolios = portfolios
     }
+}
+
+class Portfolio: Decodable {
+    let Ticker: String
+    let Name: String
+    let Price: Double?
+    let Return: Double
+    
+    
+    
+    init(Ticker: String, Name: String, Price: Double?, Return: Double ){
+        self.Ticker = Ticker
+        self.Name = Name
+        self.Price = Price
+        self.Return = Return
+    }
+    
+    
     
 }

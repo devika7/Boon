@@ -11,11 +11,9 @@ import UIKit
 
 class Video{
     var image : UIImage
-    var title : String
     
-    init(image : UIImage, title : String){
+    init(image : UIImage){
         self.image = image
-        self.title = title
     }
     
 }
