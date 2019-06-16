@@ -11,9 +11,11 @@ import UIKit
 
 class Video{
     var image : UIImage
+    var videoUrl : String
     
-    init(image : UIImage){
+    init(image : UIImage, videoUrl : String){
         self.image = image
+        self.videoUrl = videoUrl
     }
     
 }

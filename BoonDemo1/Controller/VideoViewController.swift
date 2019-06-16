@@ -42,14 +42,15 @@ class VideoViewController: UIViewController {
                 for document in querySnapshot!.documents{
                     let imageUrl = document.data()["videoImage"] as? String ?? ""
                     let gsReference = storage.reference(forURL: imageUrl)
-                    
+                    let videoUrl = document.data()["videoUrl"] as? String ?? ""
+                    self.videoUrls.append(videoUrl)
                     gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
                         if let error = error {
                             print("Error getting documents: \(error)")
                         } else {
                             // Data for "images/island.jpg" is returned
                             let image = UIImage(data: data!)
-                            let video = Video(image: image!)
+                            let video = Video(image: image!, videoUrl: videoUrl)
                             
                             self.videos.append(video)
                         }
@@ -72,6 +73,7 @@ class VideoViewController: UIViewController {
                     let imageUrl = document.data()["image"] as? String ?? ""
                      let shortDesc = document.data()["text"] as? String ?? ""
                      let title = document.data()["title"] as? String ?? ""
+                     let podcastUrl = document.data()["podcastUrl"] as? String ?? ""
                     
                     let gsReference = storage.reference(forURL: imageUrl)
                     
@@ -81,8 +83,9 @@ class VideoViewController: UIViewController {
                         } else {
                             // Data for "images/island.jpg" is returned
                             let image = UIImage(data: data!)
+                           
                             
-                            let podcast = Podcast(image: image!, title: title, shortDesc: shortDesc)
+                            let podcast = Podcast(image: image!, title: title, shortDesc: shortDesc, podcastUrl: podcastUrl)
                             
                             self.podcasts.append(podcast)
                         }
@@ -109,6 +112,8 @@ extension VideoViewController : UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
+            vc?.urlArray = videoUrls
+            vc?.selectedVideoUrl = videoUrls[indexPath.row]
             self.navigationController?.pushViewController(vc!, animated: true)
     }
 }
@@ -126,6 +131,7 @@ extension VideoViewController : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
+        vc?.selectedVideoUrl = videos[indexPath.row].videoUrl
         self.navigationController?.pushViewController(vc!, animated: true)
     }
     

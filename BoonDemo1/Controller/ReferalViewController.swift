@@ -1,31 +1,21 @@
 //
-//  PlayPodcastViewController.swift
+//  ReferalViewController.swift
 //  BoonDemo1
 //
-//  Created by Shreya Navelkar on 5/31/19.
+//  Created by Shreya Navelkar on 6/15/19.
 //  Copyright © 2019 Shreya Navelkar. All rights reserved.
 //
 
 import UIKit
-import AVKit
-import AVFoundation
 
-class PlayPodcastViewController: UIViewController {
+class ReferalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    func loadVideo(firebaseUrl : String){
-        let videoUrl = NSURL(string: firebaseUrl)
-        let player = AVPlayer(url: videoUrl! as URL)
-        let playerViewController = AVPlayerViewController()
-        playerViewController.player = player
-        self.present(playerViewController, animated: true){
-            playerViewController.player?.play()
-        }
-    }
+    
 
     /*
     // MARK: - Navigation

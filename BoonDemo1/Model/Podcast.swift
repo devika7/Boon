@@ -13,11 +13,13 @@ class Podcast{
     var image : UIImage
     var title : String
     var shortDesc : String
+    var podcastUrl : String
     
-    init(image : UIImage, title : String, shortDesc : String) {
+    init(image : UIImage, title : String, shortDesc : String, podcastUrl : String) {
         self.image = image
         self.title = title
         self.shortDesc = shortDesc
+        self.podcastUrl = podcastUrl
     }
     
 }
