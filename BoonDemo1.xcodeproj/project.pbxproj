@@ -35,12 +35,14 @@
 		F1081A8E2274BD7B0043F53B /* Portfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A8D2274BD7B0043F53B /* Portfolio.swift */; };
 		F1081A902274BDAD0043F53B /* PortfolioTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */; };
 		F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */; };
+		F122D26A22A420DC002371D1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122D26922A420DC002371D1 /* DetailViewController.swift */; };
 		F13F419E227E1BF10043D9E7 /* SignUpAdditionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F419D227E1BF10043D9E7 /* SignUpAdditionalViewController.swift */; };
 		F13F41A0227E2E590043D9E7 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F419F227E2E590043D9E7 /* TabBarViewController.swift */; };
 		F13F41A4227FBD0E0043D9E7 /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13F41A3227FBD0D0043D9E7 /* SnapshotExtensions.swift */; };
 		F168BADB227DE61600A16F8C /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168BADA227DE61600A16F8C /* LogInViewController.swift */; };
 		F168BADD227DE62E00A16F8C /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168BADC227DE62E00A16F8C /* SignUpViewController.swift */; };
 		F168BADF227DEDF900A16F8C /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F168BADE227DEDF900A16F8C /* InitialViewController.swift */; };
+		F19EB67A22B55E3E006BAB10 /* Detail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19EB67922B55E3E006BAB10 /* Detail.swift */; };
 		F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1E8AE302273EACE00BB669C /* ViewInsightViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -112,12 +114,14 @@
 		F1081A8D2274BD7B0043F53B /* Portfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Portfolio.swift; sourceTree = "<group>"; };
 		F1081A8F2274BDAD0043F53B /* PortfolioTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioTableViewCell.swift; sourceTree = "<group>"; };
 		F1081A912274BE940043F53B /* ViewPortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewPortfolioViewController.swift; sourceTree = "<group>"; };
+		F122D26922A420DC002371D1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F13F419D227E1BF10043D9E7 /* SignUpAdditionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpAdditionalViewController.swift; sourceTree = "<group>"; };
 		F13F419F227E2E590043D9E7 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		F13F41A3227FBD0D0043D9E7 /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
 		F168BADA227DE61600A16F8C /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		F168BADC227DE62E00A16F8C /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		F168BADE227DEDF900A16F8C /* InitialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		F19EB67922B55E3E006BAB10 /* Detail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Detail.swift; sourceTree = "<group>"; };
 		F1CB1C39227D355E00FF0D3A /* Montserrat-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-BlackItalic.ttf"; path = "../../Downloads/Montserrat/Montserrat-BlackItalic.ttf"; sourceTree = "<group>"; };
 		F1CB1C3A227D355E00FF0D3A /* Montserrat-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-Light.ttf"; path = "../../Downloads/Montserrat/Montserrat-Light.ttf"; sourceTree = "<group>"; };
 		F1CB1C3B227D355E00FF0D3A /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Montserrat-ExtraBold.ttf"; path = "../../Downloads/Montserrat/Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
@@ -289,6 +293,7 @@
 			children = (
 				E8A2D340226CE8920047A654 /* Insight.swift */,
 				E85B3057226C01FC00F0726B /* Video.swift */,
+				F19EB67922B55E3E006BAB10 /* Detail.swift */,
 				F1081A8D2274BD7B0043F53B /* Portfolio.swift */,
 				B5D9F17E229C8C2C0013CD8C /* Podcast.swift */,
 			);
@@ -311,6 +316,7 @@
 			children = (
 				E85F0C29226B679E0078310F /* ViewController.swift */,
 				E85B3053226BF55D00F0726B /* VideoViewController.swift */,
+				F122D26922A420DC002371D1 /* DetailViewController.swift */,
 				E85B3059226CD1C700F0726B /* PlayVideoViewController.swift */,
 				B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */,
 				E85B3051226BEECC00F0726B /* InsightViewController.swift */,
@@ -572,9 +578,11 @@
 				B5D9F17F229C8C2C0013CD8C /* Podcast.swift in Sources */,
 				B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */,
 				F13F419E227E1BF10043D9E7 /* SignUpAdditionalViewController.swift in Sources */,
+				F19EB67A22B55E3E006BAB10 /* Detail.swift in Sources */,
 				F168BADF227DEDF900A16F8C /* InitialViewController.swift in Sources */,
 				E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */,
 				F168BADB227DE61600A16F8C /* LogInViewController.swift in Sources */,
+				F122D26A22A420DC002371D1 /* DetailViewController.swift in Sources */,
 				E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */,
 				F168BADD227DE62E00A16F8C /* SignUpViewController.swift in Sources */,
 				F13F41A0227E2E590043D9E7 /* TabBarViewController.swift in Sources */,
@@ -755,10 +763,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24FKBJ98M3;
+				DEVELOPMENT_TEAM = DXB32R6J2A;
 				INFOPLIST_FILE = BoonDemo1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -771,10 +779,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 24FKBJ98M3;
+				DEVELOPMENT_TEAM = DXB32R6J2A;
 				INFOPLIST_FILE = BoonDemo1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon;
+				PRODUCT_BUNDLE_IDENTIFIER = com.booninvest.Boon1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

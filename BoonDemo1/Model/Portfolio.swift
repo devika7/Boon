@@ -21,12 +21,12 @@ class Portfolios: Decodable {
 class Portfolio: Decodable {
     let Ticker: String
     let Name: String
-    let Price: Double?
+    let Price: Double
     let Return: Double
     
     
     
-    init(Ticker: String, Name: String, Price: Double?, Return: Double ){
+    init(Ticker: String, Name: String, Price: Double, Return: Double ){
         self.Ticker = Ticker
         self.Name = Name
         self.Price = Price
