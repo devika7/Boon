@@ -14,20 +14,84 @@ class PortfolioViewController: UIViewController {
     
     var portfolios:[Portfolio] = []
     var stockDetailView:[Detail] = []
+    var currentValue:Int = 0
+    var Userid:NSString = ""
     let urlToGetPortfolio = "https://projectboon.herokuapp.com/portfolio/booninvestapi/?format=json"
     
    let urlToGetStockDetails = "https://projectboon.herokuapp.com/portfolio/booninveststockpageapi/?format=json"
+    
     private let refreshControl = UIRefreshControl()
     
-     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var ValueLb: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        Userid = Auth.auth().currentUser!.uid as NSString
+
+        GetPortfolioUValue()
+        
         tableView.dataSource = self
         tableView.delegate = self
         downloadJsonStockDetails()
         downloadJson()
+        
+        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        tableView.addSubview(refreshControl) // not required when using UITableViewController
      
     }
+    
+    @objc func refresh(sender:AnyObject) {
+        // Code to refresh table view
+        downloadJsonStockDetails()
+        downloadJson()
+        GetPortfolioUValue()
+
+    }
+    
+    
+    func GetPortfolioUValue(){
+        let db = Firestore.firestore()
+        //let storage = Storage.storage()
+        db.collection("userPortfolio").getDocuments(){
+            (querySnapshot, error) in
+            if let error = error{
+                print("Error getting documents: \(error)")
+            }else{
+                for document in querySnapshot!.documents{
+                    print(document.documentID)
+                    
+                    if self.Userid.isEqual(to: document.documentID)
+                    {
+                        self.currentValue = document.data()["currentValue"] as? Int ?? 0
+                        print(self.currentValue)
+                        let aStr = String(format: "%@%d", "$", self.currentValue)
+
+                        self.ValueLb.text = aStr
+                    }
+//                    let gsReference = storage.reference(forURL: imageUrl)
+//                    let videoUrl = document.data()["videoUrl"] as? String ?? ""
+//                    self.videoUrls.append(videoUrl)
+//                    gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
+//                        if let error = error {
+//                            print("Error getting documents: \(error)")
+//                        } else {
+//                            // Data for "images/island.jpg" is returned
+//                            let image = UIImage(data: data!)
+//                            let video = Video(image: image!, videoUrl: videoUrl)
+//
+//                            self.videos.append(video)
+//                        }
+//                        self.collectionView.reloadData()
+//                    }
+                }
+            }
+        }
+    }
+
     
         // Do any additional setup after loading the view
     func downloadJsonStockDetails()
@@ -45,9 +109,11 @@ class PortfolioViewController: UIViewController {
                 }
             } catch let jsonErr {
                 print("something went wrong after download",jsonErr)
+
             }
             }.resume()
         self.tableView?.reloadData()
+
     }
     
     
@@ -63,14 +129,14 @@ class PortfolioViewController: UIViewController {
                 
                 DispatchQueue.main.async{
                     self.tableView.reloadData()
+                    self.refreshControl.endRefreshing()
                 }
             } catch let jsonErr {
                 print("something went wrong after download",jsonErr)
+                self.refreshControl.endRefreshing()
             }
             }.resume()
         self.tableView?.reloadData()
-    
-        
         
     }
     

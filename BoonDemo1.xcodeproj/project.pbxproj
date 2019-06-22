@@ -16,6 +16,7 @@
 		B5D9F181229CAFF00013CD8C /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */; };
 		B5D9F183229CEF2E0013CD8C /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */; };
 		B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */; };
+		C88B1C0C22BEC643002FAFD5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B1C0B22BEC643002FAFD5 /* ProfileViewController.swift */; };
 		E001BBAEB2CCC836CA5CE9D5 /* Pods_BoonDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */; };
 		E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3051226BEECC00F0726B /* InsightViewController.swift */; };
 		E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3053226BF55D00F0726B /* VideoViewController.swift */; };
@@ -76,6 +77,7 @@
 		B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPodcastViewController.swift; sourceTree = "<group>"; };
+		C88B1C0B22BEC643002FAFD5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		E28FB70336181BFEA152C48E /* Pods-BoonDemo1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1Tests.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1Tests/Pods-BoonDemo1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E302926F2BC63975F701DA35 /* Pods-BoonDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.debug.xcconfig"; sourceTree = "<group>"; };
 		E79EE3E47F47D80BAE2689AE /* Pods-BoonDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.release.xcconfig"; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 				F13F41A3227FBD0D0043D9E7 /* SnapshotExtensions.swift */,
 				B58F329222B692B500DF6D35 /* ResetPasswordViewController.swift */,
 				B58F329422B69C2D00DF6D35 /* UserDetailsViewController.swift */,
+				C88B1C0B22BEC643002FAFD5 /* ProfileViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				F13F41A4227FBD0E0043D9E7 /* SnapshotExtensions.swift in Sources */,
 				B5D9F17F229C8C2C0013CD8C /* Podcast.swift in Sources */,
 				B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */,
+				C88B1C0C22BEC643002FAFD5 /* ProfileViewController.swift in Sources */,
 				F13F419E227E1BF10043D9E7 /* SignUpAdditionalViewController.swift in Sources */,
 				F19EB67A22B55E3E006BAB10 /* Detail.swift in Sources */,
 				F168BADF227DEDF900A16F8C /* InitialViewController.swift in Sources */,

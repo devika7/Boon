@@ -8,6 +8,9 @@
 
 import UIKit
 import Firebase
+import AVFoundation
+import AVKit
+
 
 class VideoViewController: UIViewController {
     
@@ -21,9 +24,17 @@ class VideoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Do any additional setup after loading the view.
+
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+
         createVideos()
         createPodcast()
-        // Do any additional setup after loading the view.
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +50,9 @@ class VideoViewController: UIViewController {
             if let error = error{
                 print("Error getting documents: \(error)")
             }else{
+                self.videos.removeAll()
+                self.collectionView.reloadData()
+
                 for document in querySnapshot!.documents{
                     let imageUrl = document.data()["videoImage"] as? String ?? ""
                     let gsReference = storage.reference(forURL: imageUrl)
@@ -69,6 +83,9 @@ class VideoViewController: UIViewController {
             if let error = error{
                 print("Error getting documents: \(error)")
             }else{
+                self.podcasts.removeAll()
+                self.tableView.reloadData()
+
                 for document in querySnapshot!.documents{
                     let imageUrl = document.data()["image"] as? String ?? ""
                      let shortDesc = document.data()["text"] as? String ?? ""
@@ -111,11 +128,28 @@ extension VideoViewController : UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-            let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
-            vc?.urlArray = videoUrls
-            vc?.selectedVideoUrl = videoUrls[indexPath.row]
-            self.navigationController?.pushViewController(vc!, animated: true)
+        
+        //fix by omair
+        
+//            let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
+//            vc?.urlArray = videoUrls
+//            vc?.selectedVideoUrl = videoUrls[indexPath.row]
+        
+        loadVideo(firebaseUrl: videoUrls[indexPath.row])
+
+//            self.navigationController?.pushViewController(vc!, animated: true)
     }
+    
+    func loadVideo(firebaseUrl : String){
+        let videoUrl = NSURL(string: firebaseUrl)
+        let player = AVPlayer(url: videoUrl! as URL)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        self.present(playerViewController, animated: true){
+            playerViewController.player?.play()
+        }
+    }
+    
 }
 extension VideoViewController : UICollectionViewDataSource, UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -130,10 +164,15 @@ extension VideoViewController : UICollectionViewDataSource, UICollectionViewDele
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
-        vc?.selectedVideoUrl = videos[indexPath.row].videoUrl
-        self.navigationController?.pushViewController(vc!, animated: true)
+//        let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
+//        vc?.selectedVideoUrl = videos[indexPath.row].videoUrl
+//        self.navigationController?.pushViewController(vc!, animated: true)
+        
+        loadVideo(firebaseUrl: videos[indexPath.row].videoUrl)
+
     }
+    
+    
     
     
 }
