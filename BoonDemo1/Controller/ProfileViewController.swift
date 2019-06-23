@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
 //        let emailAddress = currentUser?.email ?? ""
 //        let Name = currentUser?.displayName ?? ""
 
-
+        
         GetProfile()
     }
     
@@ -60,6 +60,17 @@ class ProfileViewController: UIViewController {
         }
     }
 
+    
+    @IBAction func Logout(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+        }
+        catch {
+            print(error)
+        }
+    }
+    
     
     
     @IBAction func clickContinue(_ sender: Any) {

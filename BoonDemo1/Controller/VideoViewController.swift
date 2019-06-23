@@ -199,21 +199,21 @@ extension VideoViewController : UICollectionViewDataSource, UICollectionViewDele
         
         loadVideo(firebaseUrl: podcast.podcastUrl)
         
-        let db = Firestore.firestore()
-        
-        
-        db.collection("scoopPodcasts").document(podcast.ID).updateData(["isWatched" : true]){ err in
-            if let err = err {
-                print("Error writing document: \(err)")
-                
-                
-            } else {
-                print("Document successfully written!")
-                
-                
-                
-            }
-        }
+//        let db = Firestore.firestore()
+//
+//
+//        db.collection("scoopPodcasts").document(podcast.ID).updateData(["isWatched" : true]){ err in
+//            if let err = err {
+//                print("Error writing document: \(err)")
+//
+//
+//            } else {
+//                print("Document successfully written!")
+//
+//
+//
+//            }
+//        }
 
     }
     

@@ -665,6 +665,10 @@
                                 <rect key="frame" x="87" y="547" width="200" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="Managefunds"/>
+                                <connections>
+                                    <action selector="Logout:" destination="P4Q-MW-zN4" eventType="touchUpInside" id="Atj-XO-hLR"/>
+                                    <segue destination="YdI-mZ-gc0" kind="presentation" id="YgM-bU-4ab"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Manage Funds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6e6-54-1cd">
                                 <rect key="frame" x="120" y="492" width="134" height="21"/>
