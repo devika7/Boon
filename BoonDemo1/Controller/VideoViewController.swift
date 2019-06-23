@@ -14,7 +14,7 @@ import AVKit
 
 class VideoViewController: UIViewController {
     
-    var videos:[Video] = []
+    var videos:[Podcast] = []
     var podcasts:[Podcast] = []
     var videoUrls:[String] = []
     var podcastUrls:[String] = []
@@ -32,7 +32,7 @@ class VideoViewController: UIViewController {
         super.viewWillAppear(animated)
         
 
-        createVideos()
+       //createVideos()
         createPodcast()
 
     }
@@ -45,7 +45,7 @@ class VideoViewController: UIViewController {
     func createVideos(){
         let db = Firestore.firestore()
         let storage = Storage.storage()
-        db.collection("scoopVideos").getDocuments(){
+        db.collection("scoopPodcasts").getDocuments(){
             (querySnapshot, error) in
             if let error = error{
                 print("Error getting documents: \(error)")
@@ -66,7 +66,7 @@ class VideoViewController: UIViewController {
                             let image = UIImage(data: data!)
                             let video = Video(image: image!, videoUrl: videoUrl)
                             
-                            self.videos.append(video)
+                            //self.videos.append(video)
                         }
                         self.collectionView.reloadData()
                     }
@@ -85,13 +85,17 @@ class VideoViewController: UIViewController {
             }else{
                 self.podcasts.removeAll()
                 self.tableView.reloadData()
+                self.videos.removeAll()
+                self.collectionView.reloadData()
 
                 for document in querySnapshot!.documents{
                     let imageUrl = document.data()["image"] as? String ?? ""
                      let shortDesc = document.data()["text"] as? String ?? ""
                      let title = document.data()["title"] as? String ?? ""
-                     let podcastUrl = document.data()["podcastUrl"] as? String ?? ""
-                    
+                    let podcastUrl = document.data()["podcastUrl"] as? String ?? ""
+                    let isWatched = document.data()["isWatched"] as? Bool ?? false
+                    let ID = document.documentID
+
                     let gsReference = storage.reference(forURL: imageUrl)
                     
                     gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
@@ -99,14 +103,30 @@ class VideoViewController: UIViewController {
                             print("Error getting documents: \(error)")
                         } else {
                             // Data for "images/island.jpg" is returned
-                            let image = UIImage(data: data!)
-                           
                             
-                            let podcast = Podcast(image: image!, title: title, shortDesc: shortDesc, podcastUrl: podcastUrl)
                             
-                            self.podcasts.append(podcast)
+                            if isWatched
+                            {
+                                let image = UIImage(data: data!)
+                                
+                                
+                                let podcast = Podcast(ID: ID, image: image!, title: title, shortDesc: shortDesc, podcastUrl: podcastUrl)
+                                
+                                self.podcasts.append(podcast)
+
+                            }else{
+                                let image = UIImage(data: data!)
+                                
+                                
+                                let podcast = Podcast(ID: ID,image: image!, title: title, shortDesc: shortDesc, podcastUrl: podcastUrl)
+                                
+                                self.videos.append(podcast)
+
+                            }
+                            
                         }
                         self.tableView.reloadData()
+                        self.collectionView.reloadData()
                     }
                 }
             }
@@ -135,7 +155,9 @@ extension VideoViewController : UITableViewDataSource, UITableViewDelegate {
 //            vc?.urlArray = videoUrls
 //            vc?.selectedVideoUrl = videoUrls[indexPath.row]
         
-        loadVideo(firebaseUrl: videoUrls[indexPath.row])
+        let podcast = podcasts[indexPath.row]
+        
+        loadVideo(firebaseUrl: podcast.podcastUrl)
 
 //            self.navigationController?.pushViewController(vc!, animated: true)
     }
@@ -158,6 +180,11 @@ extension VideoViewController : UICollectionViewDataSource, UICollectionViewDele
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let video = videos[indexPath.row]
+        //let podcast = podcasts[indexPath.row]
+
+        //let video = Video(image: podcast.image, videoUrl: podcast.podcastUrl)
+        
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "VideoCollectionViewCell", for: indexPath) as! VideoCollectionViewCell
         cell.setVideo(video: video)
         return cell
@@ -168,7 +195,25 @@ extension VideoViewController : UICollectionViewDataSource, UICollectionViewDele
 //        vc?.selectedVideoUrl = videos[indexPath.row].videoUrl
 //        self.navigationController?.pushViewController(vc!, animated: true)
         
-        loadVideo(firebaseUrl: videos[indexPath.row].videoUrl)
+        let podcast = videos[indexPath.row]
+        
+        loadVideo(firebaseUrl: podcast.podcastUrl)
+        
+        let db = Firestore.firestore()
+        
+        
+        db.collection("scoopPodcasts").document(podcast.ID).updateData(["isWatched" : true]){ err in
+            if let err = err {
+                print("Error writing document: \(err)")
+                
+                
+            } else {
+                print("Document successfully written!")
+                
+                
+                
+            }
+        }
 
     }
     

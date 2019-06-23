@@ -31,7 +31,6 @@ class PortfolioViewController: UIViewController {
         
         Userid = Auth.auth().currentUser!.uid as NSString
 
-        GetPortfolioUValue()
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -42,6 +41,8 @@ class PortfolioViewController: UIViewController {
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         tableView.addSubview(refreshControl) // not required when using UITableViewController
      
+        GetPortfolioUValue()
+
     }
     
     @objc func refresh(sender:AnyObject) {

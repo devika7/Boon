@@ -27,7 +27,7 @@ class ProfileViewController: UIViewController {
 //        let emailAddress = currentUser?.email ?? ""
 //        let Name = currentUser?.displayName ?? ""
 
-        
+
         GetProfile()
     }
     
@@ -79,13 +79,13 @@ class ProfileViewController: UIViewController {
                 print("profile updated")
             }
         }
-        currentUser?.updatePassword(to: self.passwordField.text!){(error) in
-            if let error = error {
-                print("Error writing document: \(error)")
-            } else {
-                print("profile updated")
-            }
-        }
+//        currentUser?.updatePassword(to: self.passwordField.text!){(error) in
+//            if let error = error {
+//                print("Error writing document: \(error)")
+//            } else {
+//                print("profile updated")
+//            }
+//        }
         currentUser?.updateEmail(to: self.emailIdField.text!){(error) in
             if let error = error {
                 print("Error writing document: \(error)")
@@ -105,8 +105,18 @@ class ProfileViewController: UIViewController {
         db.collection("user").document(uid).setData(docData){ err in
             if let err = err {
                 print("Error writing document: \(err)")
+                
+                let resetFailedAlert = UIAlertController(title: "Update Failed", message: "Error: \(String(describing: err.localizedDescription))", preferredStyle: .alert)
+                resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(resetFailedAlert, animated: true, completion: nil)
+
             } else {
                 print("Document successfully written!")
+                
+                let resetFailedAlert = UIAlertController(title: "successfully", message: "Profile update successfully", preferredStyle: .alert)
+                resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(resetFailedAlert, animated: true, completion: nil)
+
 
             }
         }
