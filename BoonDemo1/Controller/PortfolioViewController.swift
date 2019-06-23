@@ -38,7 +38,7 @@ class PortfolioViewController: UIViewController {
         downloadJsonStockDetails()
         downloadJson()
         
-        refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         tableView.addSubview(refreshControl) // not required when using UITableViewController
      
