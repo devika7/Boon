@@ -580,10 +580,10 @@
             </objects>
             <point key="canvasLocation" x="-778.39999999999998" y="1324.5877061469266"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="4dT-Kl-93o">
             <objects>
-                <viewController id="P4Q-MW-zN4" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="P4Q-MW-zN4" customClass="AccountViewController" customModule="BoonDemo1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XdZ-Uy-ne0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -643,12 +643,18 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Jane Doe" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="02z-mY-HKm">
                                 <rect key="frame" x="168" y="104" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="55UKSR" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YU1-6d-a8e">
                                 <rect key="frame" x="168" y="151" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -656,6 +662,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="jan.doe@gmail.com" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7w2-gf-CQv">
                                 <rect key="frame" x="168" y="198" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
@@ -663,6 +672,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="862-245-4567" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fcq-Er-ST8">
                                 <rect key="frame" x="168" y="245" width="182" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" image="YES" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" textContentType="tel"/>
@@ -670,6 +682,9 @@
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="212 Avenue B, Apt 2A, New York, NY, 10009" minimumFontSize="8" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="R9q-xH-f5n">
                                 <rect key="frame" x="168" y="286" width="170" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                                </accessibility>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
@@ -688,6 +703,15 @@
                     <navigationItem key="navigationItem" id="iuV-B7-uc4"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="accountNumber" destination="YU1-6d-a8e" id="oGI-Pv-lUd"/>
+                        <outlet property="address" destination="R9q-xH-f5n" id="4hh-rR-ZO4"/>
+                        <outlet property="emailAddress" destination="7w2-gf-CQv" id="0bP-XA-pzZ"/>
+                        <outlet property="logoutButton" destination="nzq-Ve-1ks" id="fk3-Pf-Wbl"/>
+                        <outlet property="manageFundsButton" destination="COB-Dh-NWg" id="lya-gC-jpg"/>
+                        <outlet property="name" destination="02z-mY-HKm" id="eGz-Yk-bTV"/>
+                        <outlet property="phoneNumber" destination="fcq-Er-ST8" id="MOV-iS-aQM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d0J-xB-Shi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1271,7 +1295,7 @@
                                                 <attributedString key="attributedText">
                                                     <fragment content="Ticker">
                                                         <attributes>
-                                                            <font key="NSFont" size="21" name="Montserrat-Bold"/>
+                                                            <font key="NSFont" metaFont="system" size="21"/>
                                                             <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                                         </attributes>
                                                     </fragment>
@@ -1337,7 +1361,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPY-EZ-wLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6692" y="-824.8875562218891"/>
+            <point key="canvasLocation" x="47" y="-1007"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="k8m-Ob-2qS">
