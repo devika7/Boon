@@ -11,7 +11,7 @@ import UIKit
 class VideoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageVideo: UIImageView!
     
-    func setVideo(video: Video){
+    func setVideo(video: Podcast){
         let view = UILabel()
         view.frame = CGRect(x: 0, y: 0, width: 124, height: 86)
         view.backgroundColor = .white
