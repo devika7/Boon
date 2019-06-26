@@ -12,7 +12,6 @@
 		B58F329122B5BA5300DF6D35 /* ReferalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F329022B5BA5300DF6D35 /* ReferalViewController.swift */; };
 		B58F329322B692B500DF6D35 /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F329222B692B500DF6D35 /* ResetPasswordViewController.swift */; };
 		B58F329522B69C2D00DF6D35 /* UserDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F329422B69C2D00DF6D35 /* UserDetailsViewController.swift */; };
-		B58F329722BE9E6B00DF6D35 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58F329622BE9E6B00DF6D35 /* AccountViewController.swift */; };
 		B5D9F17F229C8C2C0013CD8C /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F17E229C8C2C0013CD8C /* Podcast.swift */; };
 		B5D9F181229CAFF00013CD8C /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */; };
 		B5D9F183229CEF2E0013CD8C /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */; };
@@ -75,7 +74,6 @@
 		B58F329022B5BA5300DF6D35 /* ReferalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferalViewController.swift; sourceTree = "<group>"; };
 		B58F329222B692B500DF6D35 /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		B58F329422B69C2D00DF6D35 /* UserDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailsViewController.swift; sourceTree = "<group>"; };
-		B58F329622BE9E6B00DF6D35 /* AccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		B5D9F17E229C8C2C0013CD8C /* Podcast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
 		B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
@@ -201,6 +199,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		B51BBAD422C3C82D008FE85B /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		E85F0C1B226B679E0078310F = {
 			isa = PBXGroup;
 			children = (
@@ -211,6 +216,7 @@
 				E85F0C25226B679E0078310F /* Products */,
 				791329646409C41C92FCF200 /* Pods */,
 				7F8F02C39DB6EFF84CFDDE67 /* Frameworks */,
+				B51BBAD422C3C82D008FE85B /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -593,7 +599,6 @@
 				F168BADB227DE61600A16F8C /* LogInViewController.swift in Sources */,
 				F122D26A22A420DC002371D1 /* DetailViewController.swift in Sources */,
 				E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */,
-				B58F329722BE9E6B00DF6D35 /* AccountViewController.swift in Sources */,
 				F168BADD227DE62E00A16F8C /* SignUpViewController.swift in Sources */,
 				F13F41A0227E2E590043D9E7 /* TabBarViewController.swift in Sources */,
 				E85B305A226CD1C700F0726B /* PlayVideoViewController.swift in Sources */,
