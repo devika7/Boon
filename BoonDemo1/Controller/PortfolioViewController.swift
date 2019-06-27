@@ -27,11 +27,7 @@ class PortfolioViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         Userid = Auth.auth().currentUser!.uid as NSString
-
-        
         tableView.dataSource = self
         tableView.delegate = self
         downloadJsonStockDetails()
@@ -160,8 +156,6 @@ extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as? DetailViewController
         let portfolio = self.portfolios[indexPath.row]
         let tickerVal = portfolio.Ticker
-        print(tickerVal)
-        print("\(stockDetailView.count)")
         for details in self.stockDetailView{
             if details.ticker == tickerVal{
                 detailVC?.tickerText = details.ticker

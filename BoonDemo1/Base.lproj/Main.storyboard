@@ -442,16 +442,6 @@
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat Light" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" smartDashesType="yes" smartInsertDeleteType="no" smartQuotesType="no" textContentType="tel"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioe-eK-izw">
-                                <rect key="frame" x="16" y="30" width="31" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" red="0.2784313725" green="0.74117647060000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" image="backArrow"/>
-                                <connections>
-                                    <action selector="handleDismissButton:" destination="1aC-ZH-bKE" eventType="touchUpInside" id="3C8-Hi-Hle"/>
-                                    <action selector="handleDismissButton:" destination="jXl-QU-ajq" eventType="touchUpInside" id="xeA-3c-dKB"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GoM-Ij-mVV" userLabel="loginButton">
                                 <rect key="frame" x="298" y="30" width="45" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -459,6 +449,16 @@
                                 <state key="normal" title="Log In">
                                     <color key="titleColor" white="0.0" alpha="0.80254708904109584" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ioe-eK-izw">
+                                <rect key="frame" x="16" y="30" width="26" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.2784313725" green="0.74117647060000003" blue="0.63137254899999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="handleDismissButton:" destination="1aC-ZH-bKE" eventType="touchUpInside" id="3C8-Hi-Hle"/>
+                                    <action selector="handleDismissButton:" destination="jXl-QU-ajq" eventType="touchUpInside" id="xeA-3c-dKB"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -471,7 +471,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C0Q-cM-vvH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4922" y="-912"/>
+            <point key="canvasLocation" x="-4922.3999999999996" y="-912.5937031484259"/>
         </scene>
         <!--Insights-->
         <scene sceneID="78u-mI-MXa">
@@ -577,6 +577,9 @@
                                 <state key="normal" title="Submit" image="Managefunds">
                                     <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickSubmit:" destination="AYL-pl-8Yw" eventType="touchUpInside" id="QdD-d6-teU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Gd-DZ-8xq">
                                 <rect key="frame" x="46" y="154" width="291" height="212"/>
@@ -643,6 +646,10 @@
                     <navigationItem key="navigationItem" id="RsZ-u1-Ob6"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="referalEmailId" destination="g1b-Yz-zCB" id="Ac0-2i-izD"/>
+                        <outlet property="submitButton" destination="cks-4q-2k7" id="P1E-83-nhG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nHv-qU-LPA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -933,7 +940,7 @@
                                                     <viewLayoutGuide key="safeArea" id="det-gv-JVJ"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="otr-PC-kIW">
-                                                    <rect key="frame" x="179" y="35" width="220" height="61"/>
+                                                    <rect key="frame" x="179" y="35" width="181" height="61"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="eo0-mV-cXY"/>
                                                         <constraint firstAttribute="height" constant="61" id="nu9-FT-ZLo"/>
@@ -943,7 +950,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="o8e-PX-v7p">
-                                                    <rect key="frame" x="218" y="112" width="181" height="61"/>
+                                                    <rect key="frame" x="179" y="112" width="181" height="61"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="181" id="R7D-zE-pmW"/>
                                                     </constraints>
@@ -1127,7 +1134,7 @@
                                 <rect key="frame" x="47" y="233.5" width="281" height="384.5"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="portfolioTableViewCell" rowHeight="66" id="cV6-Nm-4De" customClass="PortfolioTableViewCell" customModule="BoonDemo1" customModuleProvider="target">
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="portfolioTableViewCell" rowHeight="66" id="cV6-Nm-4De" customClass="PortfolioTableViewCell" customModule="BoonDemo1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="281" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cV6-Nm-4De" id="j6D-nM-2Q1">
@@ -1135,7 +1142,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQ4-nA-aSU">
-                                                    <rect key="frame" x="194" y="23" width="106" height="26"/>
+                                                    <rect key="frame" x="194" y="23" width="67" height="26"/>
                                                     <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -1388,11 +1395,6 @@
                                                 </attributedString>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-Qm-RJZ">
-                                                <rect key="frame" x="14" y="9" width="25" height="25"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="backArrow"/>
-                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="shortdesc" lineBreakMode="wordWrap" numberOfLines="36" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRa-jI-ebV">
                                                 <rect key="frame" x="29" y="583" width="322" height="267"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1400,6 +1402,14 @@
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cxw-Qm-RJZ">
+                                                <rect key="frame" x="12" y="14" width="27" height="23"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" image="backArrow"/>
+                                                <connections>
+                                                    <action selector="backToPortfolio:" destination="k3G-OX-yWM" eventType="touchUpInside" id="C7e-NB-9mH"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -1434,6 +1444,7 @@
                         <outlet property="fiftyTwoWeekHigh" destination="u0O-EJ-cDQ" id="TSC-b8-dIC"/>
                         <outlet property="fiftyTwoWeekLow" destination="xvo-AF-uzb" id="g8p-k8-e3t"/>
                         <outlet property="fiveYearReturn" destination="Fj0-0G-gAV" id="srp-ud-4Pc"/>
+                        <outlet property="goBack" destination="Cxw-Qm-RJZ" id="fLp-s9-kxk"/>
                         <outlet property="marketcap" destination="N7R-Dq-hVa" id="Rgi-D7-ZLO"/>
                         <outlet property="peRatio" destination="i44-Vb-nCp" id="Bxx-x8-qYb"/>
                         <outlet property="returnField" destination="s86-vJ-kmk" id="SSr-kW-yxv"/>
@@ -1447,7 +1458,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kPY-EZ-wLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="47" y="-1007"/>
+            <point key="canvasLocation" x="45.600000000000001" y="-1007.4962518740631"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="k8m-Ob-2qS">

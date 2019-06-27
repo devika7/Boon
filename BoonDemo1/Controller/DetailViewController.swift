@@ -10,6 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
+    @IBOutlet weak var goBack: UIButton!
     @IBOutlet weak var ticker: UILabel!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var stockPrice: UILabel!
@@ -24,6 +25,10 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var shortdesc: UILabel!
     @IBOutlet weak var beta: UILabel!
     @IBOutlet weak var marketcap: UILabel!
+    
+    @IBAction func backToPortfolio(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     
     
     var tickerText = ""

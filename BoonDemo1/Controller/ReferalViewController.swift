@@ -7,14 +7,59 @@
 //
 
 import UIKit
+import Firebase
 
 class ReferalViewController: UIViewController {
 
+    @IBOutlet weak var referalEmailId: UITextField!
+    @IBOutlet weak var submitButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setSubmitButton(enabled: false)
+        referalEmailId.addTarget(self, action: #selector(enableSubmitButton), for: .editingChanged)
+        
         // Do any additional setup after loading the view.
     }
+    
+    @objc func enableSubmitButton(_ target : UITextField){
+        let emailId = referalEmailId.text
+        let emailIdPresent = emailId != nil && emailId != ""
+        setSubmitButton(enabled : emailIdPresent)
+        
+    }
+    
+    func setSubmitButton(enabled: Bool){
+        if enabled{
+            submitButton.isEnabled = true
+        }else{
+             submitButton.isEnabled = false
+        }
+    }
+    
+    @IBAction func clickSubmit(_ sender: Any) {
+        let db = Firestore.firestore()
+        let data = ["referEmailId" : referalEmailId.text ?? ""]
+    db.collection("referralId").document().setData(data){
+            err in
+            if let err = err {
+                print("Error writing document: \(err)")
+            } else {
+                print("Document successfully written!")
+                self.resetForm()
+            }
+        }
+    }
+    
+    func resetForm(){
+        let alert = UIAlertController(title: "Thanks for sharing your love.", message: nil, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok" , style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        self.referalEmailId.text?.removeAll()
+        setSubmitButton(enabled : false)
+        
+    }
+    
     
 
     /*
