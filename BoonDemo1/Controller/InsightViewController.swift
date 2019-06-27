@@ -54,6 +54,7 @@ class InsightViewController: UIViewController {
                     let url = document.data()["imageUrl"] as?  String ?? ""
                     
                     let gsReference = storage.reference(forURL: url)
+                    let insightUrl = document.data()["url"] as? String ?? ""
                     
                     gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
                         if let error = error {
@@ -62,7 +63,7 @@ class InsightViewController: UIViewController {
                             // Data for "images/island.jpg" is returned
                             let image = UIImage(data: data!)
                             
-                            let insight = Insight(title: title, text: text, image: image!)
+                            let insight = Insight(title: title, text: text, image: image!, url: insightUrl)
                             
                             self.insights.append(insight)
                         }
@@ -90,9 +91,7 @@ extension InsightViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "ViewInsightViewController")as? ViewInsightViewController
         let insight = insights[indexPath.row]
-        vc?.insightTitle = insight.title
-        vc?.image = insight.image
-        vc?.insightText = insight.text
+        vc?.insightUrl = insight.url
         self.navigationController?.pushViewController(vc!, animated: true)
         
     }

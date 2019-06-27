@@ -13,10 +13,12 @@ class Insight {
     var title : String
     var text : String
     var image : UIImage
+    var url : String
     
-    init( title : String, text : String, image : UIImage){
+    init( title : String, text : String, image : UIImage, url : String){
         self.title = title
         self.text = text
         self.image = image
+        self.url = url
     }
 }
