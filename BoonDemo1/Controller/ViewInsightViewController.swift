@@ -82,10 +82,11 @@ class ViewInsightViewController: UIViewController {
         imageDisplayContainer.rightAnchor.constraint(equalTo: scrollView.rightAnchor, constant: 60).isActive = true
         
         scrollView.addSubview(textLabel)
+        
         textLabel.textAlignment = .justified
         let screensize: CGRect = UIScreen.main.bounds
         let screenWidth = screensize.width
-        textLabel.frame = CGRect(x: 0, y: 0, width: 370 , height: 2000)
+        textLabel.frame = CGRect(x: 0, y: 0, width: screenWidth , height: 2000)
         textLabel.backgroundColor = .white
         textLabel.textColor = UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         textLabel.font = UIFont(name: "Montserrat-Regular", size: 14)

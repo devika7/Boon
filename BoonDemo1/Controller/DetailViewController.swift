@@ -56,7 +56,7 @@ class DetailViewController: UIViewController {
         self.upDownField.text = upDownFieldText
         self.marketcap.text = marketcapText
         self.beta.text = betaText
-        self.returnField.text = returnFieldText
+        self.returnField.text = returnFieldText + " Today"
         self.peRatio.text = peRatioText
         self.ytdField.text = ytdFieldText
         self.twoYearReturn.text = twoYearReturnText
@@ -65,7 +65,16 @@ class DetailViewController: UIViewController {
         self.fiftyTwoWeekLow.text = fiftyTwoWeekLowText
         self.shortdesc.text = shortdescText
         
+        print(shortdescText)
+        
         
     }
+    
+    @IBAction func clickback(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+        
+    }
+
 
 }

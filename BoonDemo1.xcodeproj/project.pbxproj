@@ -16,8 +16,12 @@
 		B5D9F181229CAFF00013CD8C /* VideoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */; };
 		B5D9F183229CEF2E0013CD8C /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */; };
 		B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */; };
+		C87B325B22C8127D0030B8FE /* ParallaxHeaderMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B325622C8127D0030B8FE /* ParallaxHeaderMode.swift */; };
+		C87B325C22C8127D0030B8FE /* UIScrollView+ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B325822C8127D0030B8FE /* UIScrollView+ParallaxHeader.swift */; };
+		C87B325E22C8127D0030B8FE /* ParallaxHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87B325A22C8127D0030B8FE /* ParallaxHeader.swift */; };
 		C88B1C0C22BEC643002FAFD5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B1C0B22BEC643002FAFD5 /* ProfileViewController.swift */; };
 		C88B1C3F22C001CE002FAFD5 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88B1C3E22C001CE002FAFD5 /* ForgotPasswordViewController.swift */; };
+		C8F1402222C93BAE00384A1D /* ManageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8F1402122C93BAE00384A1D /* ManageViewController.swift */; };
 		E001BBAEB2CCC836CA5CE9D5 /* Pods_BoonDemo1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A6C7C2D564F8E8811B621A5 /* Pods_BoonDemo1.framework */; };
 		E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3051226BEECC00F0726B /* InsightViewController.swift */; };
 		E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E85B3053226BF55D00F0726B /* VideoViewController.swift */; };
@@ -78,8 +82,14 @@
 		B5D9F180229CAFF00013CD8C /* VideoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCollectionViewCell.swift; sourceTree = "<group>"; };
 		B5D9F182229CEF2E0013CD8C /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		B5D9F18422A21B920013CD8C /* PlayPodcastViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPodcastViewController.swift; sourceTree = "<group>"; };
+		C87B325622C8127D0030B8FE /* ParallaxHeaderMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeaderMode.swift; sourceTree = "<group>"; };
+		C87B325722C8127D0030B8FE /* ParallaxHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParallaxHeader.h; sourceTree = "<group>"; };
+		C87B325822C8127D0030B8FE /* UIScrollView+ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+ParallaxHeader.swift"; sourceTree = "<group>"; };
+		C87B325922C8127D0030B8FE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C87B325A22C8127D0030B8FE /* ParallaxHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParallaxHeader.swift; sourceTree = "<group>"; };
 		C88B1C0B22BEC643002FAFD5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C88B1C3E22C001CE002FAFD5 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
+		C8F1402122C93BAE00384A1D /* ManageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageViewController.swift; sourceTree = "<group>"; };
 		E28FB70336181BFEA152C48E /* Pods-BoonDemo1Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1Tests.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1Tests/Pods-BoonDemo1Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E302926F2BC63975F701DA35 /* Pods-BoonDemo1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.debug.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.debug.xcconfig"; sourceTree = "<group>"; };
 		E79EE3E47F47D80BAE2689AE /* Pods-BoonDemo1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoonDemo1.release.xcconfig"; path = "Target Support Files/Pods-BoonDemo1/Pods-BoonDemo1.release.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +209,19 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C87B325522C8127D0030B8FE /* ParallaxHeader */ = {
+			isa = PBXGroup;
+			children = (
+				C87B325622C8127D0030B8FE /* ParallaxHeaderMode.swift */,
+				C87B325722C8127D0030B8FE /* ParallaxHeader.h */,
+				C87B325822C8127D0030B8FE /* UIScrollView+ParallaxHeader.swift */,
+				C87B325922C8127D0030B8FE /* Info.plist */,
+				C87B325A22C8127D0030B8FE /* ParallaxHeader.swift */,
+			);
+			name = ParallaxHeader;
+			path = ../ParallaxHeader;
+			sourceTree = "<group>";
+		};
 		E85F0C1B226B679E0078310F = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +248,7 @@
 		E85F0C26226B679E0078310F /* BoonDemo1 */ = {
 			isa = PBXGroup;
 			children = (
+				C87B325522C8127D0030B8FE /* ParallaxHeader */,
 				F168BAD7227DD95300A16F8C /* Controller */,
 				F168BAD6227DD94A00A16F8C /* View */,
 				F168BAD5227DD93000A16F8C /* Model */,
@@ -338,6 +362,7 @@
 				B58F329422B69C2D00DF6D35 /* UserDetailsViewController.swift */,
 				C88B1C0B22BEC643002FAFD5 /* ProfileViewController.swift */,
 				C88B1C3E22C001CE002FAFD5 /* ForgotPasswordViewController.swift */,
+				C8F1402122C93BAE00384A1D /* ManageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -572,15 +597,18 @@
 			files = (
 				B5D9F181229CAFF00013CD8C /* VideoCollectionViewCell.swift in Sources */,
 				F1081A8E2274BD7B0043F53B /* Portfolio.swift in Sources */,
+				C87B325C22C8127D0030B8FE /* UIScrollView+ParallaxHeader.swift in Sources */,
 				E85B3058226C01FC00F0726B /* Video.swift in Sources */,
 				E85F0C2A226B679E0078310F /* ViewController.swift in Sources */,
 				B5D9F183229CEF2E0013CD8C /* PodcastTableViewCell.swift in Sources */,
+				C87B325B22C8127D0030B8FE /* ParallaxHeaderMode.swift in Sources */,
 				E85B3052226BEECC00F0726B /* InsightViewController.swift in Sources */,
 				F1E8AE312273EACE00BB669C /* ViewInsightViewController.swift in Sources */,
 				B58F329322B692B500DF6D35 /* ResetPasswordViewController.swift in Sources */,
 				B58F329522B69C2D00DF6D35 /* UserDetailsViewController.swift in Sources */,
 				F1081A922274BE940043F53B /* ViewPortfolioViewController.swift in Sources */,
 				F13F41A4227FBD0E0043D9E7 /* SnapshotExtensions.swift in Sources */,
+				C87B325E22C8127D0030B8FE /* ParallaxHeader.swift in Sources */,
 				B5D9F17F229C8C2C0013CD8C /* Podcast.swift in Sources */,
 				B5D9F18522A21B920013CD8C /* PlayPodcastViewController.swift in Sources */,
 				C88B1C0C22BEC643002FAFD5 /* ProfileViewController.swift in Sources */,
@@ -590,6 +618,7 @@
 				E85B3054226BF55D00F0726B /* VideoViewController.swift in Sources */,
 				F168BADB227DE61600A16F8C /* LogInViewController.swift in Sources */,
 				F122D26A22A420DC002371D1 /* DetailViewController.swift in Sources */,
+				C8F1402222C93BAE00384A1D /* ManageViewController.swift in Sources */,
 				E8A2D343226CE9590047A654 /* InsightTableViewCell.swift in Sources */,
 				F168BADD227DE62E00A16F8C /* SignUpViewController.swift in Sources */,
 				F13F41A0227E2E590043D9E7 /* TabBarViewController.swift in Sources */,

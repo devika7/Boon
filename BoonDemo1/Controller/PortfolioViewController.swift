@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+//mport SnapKit
+
 
 
 class PortfolioViewController: UIViewController {
@@ -24,7 +26,10 @@ class PortfolioViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ValueLb: UITextField!
-    
+    @IBOutlet weak var UDValue_Lb: UILabel!
+    @IBOutlet weak var UD_Lb: UILabel!
+    @IBOutlet weak var Header_View: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,8 +44,35 @@ class PortfolioViewController: UIViewController {
         
         //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        tableView.addSubview(refreshControl) // not required when using UITableViewController
-     
+        tableView.addSubview(refreshControl)
+        
+        // not required when using UITableViewController
+        tableView.estimatedSectionHeaderHeight = 40.0
+
+        self.automaticallyAdjustsScrollViewInsets = false
+        // Set a header for the table view
+//        let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+//        header.backgroundColor = .red
+        
+        tableView.tableHeaderView = Header_View
+
+        
+//        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+//        statusBar.backgroundColor = .red
+        
+        let image3 = UIImage(named: "Group (1)")
+
+        self.view.backgroundColor = UIColor(patternImage: image3!)
+        tableView.backgroundColor = UIColor(patternImage: image3!)
+//        tableView.bounces = false
+        //tableView.isHidden = true
+        
+        let safeViewMargins = self.view.safeAreaLayoutGuide
+        tableView.topAnchor.constraint(equalTo: safeViewMargins.topAnchor).isActive = false
+        tableView.leadingAnchor.constraint(equalTo: safeViewMargins.leadingAnchor).isActive = false
+        tableView.trailingAnchor.constraint(equalTo: safeViewMargins.trailingAnchor).isActive = false
+
+
         GetPortfolioUValue()
 
     }
@@ -134,7 +166,10 @@ class PortfolioViewController: UIViewController {
                 }
             } catch let jsonErr {
                 print("something went wrong after download",jsonErr)
-                self.refreshControl.endRefreshing()
+                DispatchQueue.main.async { // Correct
+                    self.refreshControl.endRefreshing()
+                }
+
             }
             }.resume()
         self.tableView?.reloadData()
@@ -144,6 +179,68 @@ class PortfolioViewController: UIViewController {
     
 }
 extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    
+    //MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let v = UIView()
+//        v.backgroundColor = .white
+//        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 5, width: tableView.frame.width - 20, height: 30))
+//        segmentedControl.insertSegment(withTitle: "One", at: 0, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Two", at: 1, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Three", at: 2, animated: false)
+//        v.addSubview(segmentedControl)
+        
+        let v = UIView()
+        v.backgroundColor = .white
+
+        let v_v = UIView()
+        v_v.backgroundColor = .white
+
+        v_v.frame = CGRect(x: 0, y: -45, width: tableView.frame.width, height: 80)
+
+        let view = UILabel()
+        view.frame = CGRect(x: 0, y: 35, width: tableView.frame.width, height: 40)
+        view.backgroundColor = .clear
+        let color1 = hexStringToUIColor(hex : "#506E8D")
+
+        view.textColor = color1//UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        view.font = UIFont(name: "Montserrat-Regular", size: 25)
+        view.text = "Stocks you own"
+        //view.translatesAutoresizingMaskIntoConstraints = false
+        //view.widthAnchor.constraint(equalToConstant: 351).isActive = true
+        //view.heightAnchor.constraint(equalToConstant: 59).isActive = true
+        view.textAlignment = .center
+        view.numberOfLines = 3
+        v_v.addSubview(view)
+        v.addSubview(v_v)
+
+        return v
+    }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return portfolios.count
     }

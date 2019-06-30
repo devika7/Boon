@@ -18,6 +18,10 @@ class VideoViewController: UIViewController {
     var podcasts:[Podcast] = []
     var videoUrls:[String] = []
     var podcastUrls:[String] = []
+    var podcasts_queue: [AVPlayerItem] = []
+    var Video_queue: [AVPlayerItem] = []
+    let videoPlayerViewController = AVPlayerViewController()
+
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -25,6 +29,11 @@ class VideoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+
 
     }
     
@@ -86,6 +95,8 @@ class VideoViewController: UIViewController {
                 self.podcasts.removeAll()
                 self.tableView.reloadData()
                 self.videos.removeAll()
+                self.Video_queue.removeAll()
+                self.podcasts_queue.removeAll()
                 self.collectionView.reloadData()
 
                 for document in querySnapshot!.documents{
@@ -113,6 +124,8 @@ class VideoViewController: UIViewController {
                                 let podcast = Podcast(ID: ID, image: image!, title: title, shortDesc: shortDesc, podcastUrl: podcastUrl)
                                 
                                 self.podcasts.append(podcast)
+                                self.podcasts_queue.append(AVPlayerItem(url: NSURL(string: podcast.podcastUrl)! as URL))
+
 
                             }else{
                                 let image = UIImage(data: data!)
@@ -121,6 +134,7 @@ class VideoViewController: UIViewController {
                                 let podcast = Podcast(ID: ID,image: image!, title: title, shortDesc: shortDesc, podcastUrl: podcastUrl)
                                 
                                 self.videos.append(podcast)
+                                self.Video_queue.append(AVPlayerItem(url: NSURL(string: podcast.podcastUrl)! as URL))
 
                             }
                             
@@ -144,6 +158,7 @@ extension VideoViewController : UITableViewDataSource, UITableViewDelegate {
         let podcast = podcasts[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "PodcastTableViewCell") as! PodcastTableViewCell
         cell.setPodcast(podcast: podcast)
+
         return cell
     }
     
@@ -154,13 +169,47 @@ extension VideoViewController : UITableViewDataSource, UITableViewDelegate {
 //            let vc = storyboard?.instantiateViewController(withIdentifier: "PlayVideoViewController")as? PlayVideoViewController
 //            vc?.urlArray = videoUrls
 //            vc?.selectedVideoUrl = videoUrls[indexPath.row]
+//
+//        let podcast = podcasts[indexPath.row]
+//
+//        loadVideo(firebaseUrl: podcast.podcastUrl)
+//
+//        for StringV:String in podcast.podcastUrl {
+//
+//            var queue: [AVPlayerItem] = []
+//
+//        }
         
-        let podcast = podcasts[indexPath.row]
+        setVideoPlayer(queue: podcasts_queue)
         
-        loadVideo(firebaseUrl: podcast.podcastUrl)
 
 //            self.navigationController?.pushViewController(vc!, animated: true)
     }
+    
+    
+    internal func setVideoPlayer(queue: [AVPlayerItem]) {
+        let queuePlayer = AVQueuePlayer(items: queue)
+//        let videoPlayerViewController = AVPlayerViewController()
+
+        videoPlayerViewController.player = queuePlayer
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(note:)), name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: queue.last)
+        
+        
+
+
+        self.present(videoPlayerViewController, animated: true) {
+            self.videoPlayerViewController.player?.play()
+        }
+    }
+    @objc func playerDidFinishPlaying(note: NSNotification) {
+        // Your code here
+        self.videoPlayerViewController.player?.pause()
+//        self.videoPlayerViewController.removeFromParentViewController()
+        
+        self.videoPlayerViewController.dismiss(animated: true, completion: nil)
+    }
+
     
     func loadVideo(firebaseUrl : String){
         let videoUrl = NSURL(string: firebaseUrl)
@@ -169,6 +218,7 @@ extension VideoViewController : UITableViewDataSource, UITableViewDelegate {
         playerViewController.player = player
         self.present(playerViewController, animated: true){
             playerViewController.player?.play()
+            
         }
     }
     
@@ -195,10 +245,12 @@ extension VideoViewController : UICollectionViewDataSource, UICollectionViewDele
 //        vc?.selectedVideoUrl = videos[indexPath.row].videoUrl
 //        self.navigationController?.pushViewController(vc!, animated: true)
         
-        let podcast = videos[indexPath.row]
+//        let podcast = videos[indexPath.row]
+//
+//        loadVideo(firebaseUrl: podcast.podcastUrl)
         
-        loadVideo(firebaseUrl: podcast.podcastUrl)
-        
+        setVideoPlayer(queue: Video_queue)
+
 //        let db = Firestore.firestore()
 //
 //
