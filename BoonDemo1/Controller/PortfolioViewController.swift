@@ -206,7 +206,7 @@ extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
 
         view.textColor = color1//UIColor(red: 0, green: 0, blue: 0, alpha: 1)
         
-        view.font = UIFont(name: "Montserrat-Regular", size: 25)
+        view.font = UIFont(name: "Montserrat-Regular", size: 18)
         view.text = "Stocks you own"
         //view.translatesAutoresizingMaskIntoConstraints = false
         //view.widthAnchor.constraint(equalToConstant: 351).isActive = true

@@ -53,7 +53,20 @@ class DetailViewController: UIViewController {
         self.ticker.text =  tickerText
         self.companyName.text = companyNameText
         self.stockPrice.text = stockPriceText
-        self.upDownField.text = upDownFieldText
+        
+        guard let d = Double(returnFieldText) else { return }
+        
+        // Then implement your if statement
+        if d > 1 {
+            // Do what you want if d > 10
+            self.upDownField.text = "UP"
+
+        } else {
+            // Do what you want if d <= 10
+            self.upDownField.text = "DOWN"
+        }
+
+        
         self.marketcap.text = marketcapText
         self.beta.text = betaText
         self.returnField.text = returnFieldText + " Today"

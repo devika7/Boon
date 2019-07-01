@@ -110,6 +110,9 @@ class InsightTableViewCell: UITableViewCell {
         insightView.bringSubview(toFront: insightDesc)
         insightView.bringSubview(toFront: insightImage)
         
+        insightTitle.font = UIFont(name: "Montserrat-Regular", size: 16)
+        insightDesc.font = UIFont(name: "Montserrat-Regular", size: 13)
+
         //view.translatesAutoresizingMaskIntoConstraints = false
 
         
