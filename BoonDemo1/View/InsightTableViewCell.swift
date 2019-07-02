@@ -29,12 +29,20 @@ class InsightTableViewCell: UITableViewCell {
         // Rectangle 6.4
         
         
+        
+        for V : UIView in insightView.subviews {
+            if V.tag == 99{
+                V.removeFromSuperview()
+            }
+        }
+        
         let view = UILabel()
         
         view.frame = CGRect(x: 0, y: 0, width: insightView.frame.size.width, height: insightView.frame.size.height)
         
         view.backgroundColor = .clear
-        
+        view.tag = 99
+
         //self.insightView = view
         
         
@@ -43,7 +51,7 @@ class InsightTableViewCell: UITableViewCell {
         shadows.frame = view.frame
         
         shadows.clipsToBounds = false
-        
+        shadows.tag = 99
         view.addSubview(shadows)
         
         
@@ -73,7 +81,8 @@ class InsightTableViewCell: UITableViewCell {
         shapes.frame = view.frame
         
         shapes.clipsToBounds = true
-        
+        shapes.tag = 99
+
         view.addSubview(shapes)
         
         

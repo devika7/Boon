@@ -91,6 +91,7 @@ extension InsightViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let insight = insights[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "insightTableViewCell")as!InsightTableViewCell
+        
         cell.setInsight(insight: insight)
         return cell
     }

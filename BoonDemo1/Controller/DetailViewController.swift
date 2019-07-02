@@ -66,10 +66,19 @@ class DetailViewController: UIViewController {
             self.upDownField.text = "DOWN"
         }
 
+//        let test : AnyObject = returnFieldText as AnyObject
+//        let rounded_down = floorf(test.floatValue * 10) / 10;
+//        print(rounded_down)
+
+        let roundof : AnyObject = returnFieldText as AnyObject
+
+        let roundedValue1 = NSString(format: "%.2f", roundof.floatValue)
+        print(roundedValue1) // prints 0.684
+
         
         self.marketcap.text = marketcapText
         self.beta.text = betaText
-        self.returnField.text = returnFieldText + " Today"
+        self.returnField.text = "  " + (roundedValue1 as String)+"%" + " Today"
         self.peRatio.text = peRatioText
         self.ytdField.text = ytdFieldText
         self.twoYearReturn.text = twoYearReturnText
