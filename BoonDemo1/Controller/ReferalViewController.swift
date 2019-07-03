@@ -39,7 +39,8 @@ class ReferalViewController: UIViewController {
     
     @IBAction func clickSubmit(_ sender: Any) {
         let db = Firestore.firestore()
-        let data = ["referEmailId" : referalEmailId.text ?? ""]
+        let data = ["referEmailId" : referalEmailId.text ?? "",
+                    "userId" : Auth.auth().currentUser?.email ?? ""]
     db.collection("referralId").document().setData(data){
             err in
             if let err = err {
