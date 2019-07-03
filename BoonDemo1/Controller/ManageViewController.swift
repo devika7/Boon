@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import Firebase
 
-class ManageViewController: UIViewController {
+class ManageViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var Addfund_View: UIView!
     @IBOutlet weak var WITHDRAWFUNDS_View: UIView!
     @IBOutlet weak var Back: UIButton!
+    @IBOutlet weak var Deposit_f: UITextField!
+    @IBOutlet weak var withdrawal_f: UITextField!
+
+    var deposit_msg: NSString!
+    var deposit_Dmsg: NSString!
+    var withdrawal_msg: NSString!
+    var withdrawal_Dmsg: NSString!
+    var Message: NSString!
+    var DMessage: NSString!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,11 +31,14 @@ class ManageViewController: UIViewController {
         SetView(UView: Addfund_View)
         SetView(UView: WITHDRAWFUNDS_View)
         
-        let button = UIButton(type: .custom)
+        //let Back = UIButton(type: .custom)
         let image = UIImage(named: "backArrow")?.withRenderingMode(.alwaysTemplate)
-        button.setImage(image, for: .normal)
-        Back.tintColor = hexStringToUIColor(hex: "#506E8D")
+        Back.setImage(image, for: .normal)
+        Back.tintColor = UIColor.black
 
+        
+
+        
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {
@@ -134,10 +147,80 @@ class ManageViewController: UIViewController {
     }
     */
     
+    @IBAction func clickSubmit(_ sender: UIButton) {
+        
+        let currentUser = Auth.auth().currentUser
+
+        deposit_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to deposit %@ in their portfolio on date time\nOnce the message is sent to us, the user should get a prompt stating",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
+        
+        
+        deposit_Dmsg = String(format:"Hello BoonInvest, %@ (%@), your request has been submitted successfully. The support team will deposit $amount as per end of the day value.",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
+        
+        
+        withdrawal_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to withdraw %@ from their portfolio on date time",(currentUser?.displayName!)!, (currentUser?.email!)!,withdrawal_f.text!) as NSString
+        
+        
+        deposit_Dmsg = String(format:"Hello %@, your request has been submitted successfully. The support team will deposit %@ as per end of the day value.",(currentUser?.displayName!)!,withdrawal_f.text!) as NSString
+
+        
+        if sender.tag == 1 {
+            Message = deposit_msg
+            DMessage = deposit_Dmsg
+        }else{
+            Message = withdrawal_msg
+            DMessage = withdrawal_Dmsg
+        }
+        
+        Submit()
+    }
+
+    
+    func Submit()  {
+        
+        let currentUser = Auth.auth().currentUser
+
+        let url_str = String(format:"https://slack.com/api/chat.postMessage?token=xoxb-685003272358-676512466545-cCI7yxCv4ye8BWUIzzAszn08&channel=booncustomersupport&text=%@&username=%@&pretty=1",Message, (currentUser?.displayName!)!)
+
+        let Url = url_str.addingPercentEncoding(withAllowedCharacters:NSCharacterSet.urlQueryAllowed)
+
+        
+        let task = URLSession.shared.dataTask(with: NSURL(string: Url!)! as URL, completionHandler: { (data, response, error) -> Void in
+            do{
+                let str = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:AnyObject]
+                print(str)
+                
+                DispatchQueue.main.async {
+                    // view instantition here.
+                    let alert = UIAlertController(title: "Alert!", message: self.DMessage as String?, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+
+
+            }
+            catch {
+                print("json error: \(error)")
+                DispatchQueue.main.async {
+                    let alert = UIAlertController(title: "Alert!", message: error.localizedDescription as String?, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }
+        })
+        task.resume()
+    }
+    
     @IBAction func clickback(_ sender: Any) {
         
         self.navigationController?.popViewController(animated: true)
         
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{ // called when 'return' key pressed. return NO to ignore.
+        Deposit_f.resignFirstResponder()
+        withdrawal_f.resignFirstResponder()
+        
+        return true
     }
 
 }

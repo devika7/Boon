@@ -24,7 +24,9 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var shortdesc: UILabel!
     @IBOutlet weak var beta: UILabel!
     @IBOutlet weak var marketcap: UILabel!
-    
+    @IBOutlet weak var Scroll_V: UIScrollView!
+    private let refreshControl = UIRefreshControl()
+
     
     var tickerText = ""
     var companyNameText  = ""
@@ -45,9 +47,30 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        initDetailView()
+        
+        
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        Scroll_V.addSubview(refreshControl)
+
+        
+        
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        initDetailView()
+
+    }
+    
+    @objc func refresh(sender:AnyObject) {
+        // Code to refresh table view
+        self.shortdesc.sizeToFit()
+
+        initDetailView()
+    }
+
     
     func initDetailView(){
         self.ticker.text =  tickerText
@@ -57,7 +80,7 @@ class DetailViewController: UIViewController {
         guard let d = Double(returnFieldText) else { return }
         
         // Then implement your if statement
-        if d > 1 {
+        if d > 0 {
             // Do what you want if d > 10
             self.upDownField.text = "UP"
 
@@ -88,6 +111,8 @@ class DetailViewController: UIViewController {
         self.shortdesc.text = shortdescText
         
         print(shortdescText)
+        
+        self.refreshControl.endRefreshing()
         
         
     }

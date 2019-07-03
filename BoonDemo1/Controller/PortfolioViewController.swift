@@ -29,13 +29,13 @@ class PortfolioViewController: UIViewController {
     @IBOutlet weak var UDValue_Lb: UILabel!
     @IBOutlet weak var UD_Lb: UILabel!
     @IBOutlet weak var Header_View: UIView!
+    var Date_Str: String!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         
         Userid = Auth.auth().currentUser!.uid as NSString
-
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -74,9 +74,34 @@ class PortfolioViewController: UIViewController {
 
 
         GetPortfolioUValue()
+        
+        self.UDValue_Lb.text = ""
+        self.UD_Lb.text = ""
 
+        
+        print(convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday)))    // "Oct 28, 2018 at 12:00 PM"
+        Date_Str = convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday))
+        GetTodayValue(dateString:Date_Str)
     }
     
+    func convertNextDate(dateString : String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let myDate = dateFormatter.date(from: dateString)!
+        let somedateString = dateFormatter.string(from: myDate)
+        print("your next Date is \(somedateString)")
+        return somedateString
+    }
+    
+    func convertDateIntoString(dateString : Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let myDate = dateString//dateFormatter.date(from: dateString)!
+        let somedateString = dateFormatter.string(from: myDate)
+        print("your next Date is \(somedateString)")
+        return somedateString
+    }
+
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         downloadJsonStockDetails()
@@ -102,25 +127,52 @@ class PortfolioViewController: UIViewController {
                         self.currentValue = document.data()["currentValue"] as? Int ?? 0
                         print(self.currentValue)
                         let aStr = String(format: "%@%d", "$", self.currentValue)
-
+                        
                         self.ValueLb.text = aStr
                     }
-//                    let gsReference = storage.reference(forURL: imageUrl)
-//                    let videoUrl = document.data()["videoUrl"] as? String ?? ""
-//                    self.videoUrls.append(videoUrl)
-//                    gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
-//                        if let error = error {
-//                            print("Error getting documents: \(error)")
-//                        } else {
-//                            // Data for "images/island.jpg" is returned
-//                            let image = UIImage(data: data!)
-//                            let video = Video(image: image!, videoUrl: videoUrl)
-//
-//                            self.videos.append(video)
-//                        }
-//                        self.collectionView.reloadData()
-//                    }
                 }
+            }
+        }
+    }
+
+    func GetTodayValue(dateString : String){
+        let db = Firestore.firestore()
+        //let storage = Storage.storage()
+        
+        db.collection("boonportfolio").document(dateString).getDocument{
+            (querySnapshot, error) in
+            if let error = error{
+                print("Error getting documents: \(error)")
+                self.Date_Str = self.convertNextDate(dateString:self.Date_Str)
+
+            }else{
+                let Value = querySnapshot?.data()?["returns"] as! Double
+                
+                let d = Value
+                
+                // Then implement your if statement
+                if d > 0 {
+                    // Do what you want if d > 10
+                    self.UD_Lb.text = "UP"
+                    
+                } else {
+                    // Do what you want if d <= 10
+                    self.UD_Lb.text = "DOWN"
+                }
+                
+                //        let test : AnyObject = returnFieldText as AnyObject
+                //        let rounded_down = floorf(test.floatValue * 10) / 10;
+                //        print(rounded_down)
+                
+                let roundof : AnyObject = Value as AnyObject
+                
+                let roundedValue1 = NSString(format: "%.2f", roundof.floatValue)
+                print(roundedValue1) // prints 0.684
+                
+//                self.UDValue_Lb.text = roundedValue1
+                self.UDValue_Lb.text = "  " + (roundedValue1 as String)+"%" + " Today"
+
+
             }
         }
     }
@@ -283,5 +335,26 @@ extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
 }
+
+extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return dayAfter.month != month
+    }
+}
+
 
 
