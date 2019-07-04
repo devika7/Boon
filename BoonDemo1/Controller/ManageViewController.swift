@@ -30,6 +30,8 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
     var Contact_Dmsg: NSString!
     var Message: NSString!
     var DMessage: NSString!
+    var MsgType: NSString!
+    var MsgTypeValue: NSString!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -160,16 +162,16 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
         
         let currentUser = Auth.auth().currentUser
 
-        deposit_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to deposit %@ in their portfolio on\nOnce the message is sent to us, the user should get a prompt stating",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
+        deposit_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to deposit %@ in their portfolio.",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
         
         
-        deposit_Dmsg = String(format:"Hello BoonInvest, %@ (%@), your request has been submitted successfully. The support team will deposit $amount as per end of the day value.",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
+        deposit_Dmsg = String(format:"Hello %@ (%@), your request has been submitted successfully. The support team will deposit %@ as per end of the day value.",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
         
         
         withdrawal_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to withdraw %@ from their portfolio.",(currentUser?.displayName!)!, (currentUser?.email!)!,withdrawal_f.text!) as NSString
         
         
-        withdrawal_Dmsg = String(format:"Hello %@, your request has been submitted successfully. The support team will deposit %@ as per end of the day value.",(currentUser?.displayName!)!,withdrawal_f.text!) as NSString
+        withdrawal_Dmsg = String(format:"Hello %@, your request has been submitted successfully. The support team will withdraw %@ as per end of the day value.",(currentUser?.displayName!)!,withdrawal_f.text!) as NSString
 
         Contact_msg = String(format:"Hello BoonInvest, %@ has the following message for you:\n%@",(currentUser?.displayName!)!,Contact_f.text!) as NSString
         
@@ -181,15 +183,20 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
             Message = deposit_msg
             DMessage = deposit_Dmsg
             Deposit_f.text = ""
+            MsgType = "deposit"
+            MsgTypeValue = Deposit_f.text! as NSString
         }else if sender.tag == 2{
             Message = withdrawal_msg
             DMessage = withdrawal_Dmsg
             withdrawal_f.text = ""
+            MsgType = "withdraw"
+            MsgTypeValue = withdrawal_f.text! as NSString
         }else{
             Message = Contact_msg
             DMessage = Contact_Dmsg
             Contact_f.text = ""
-
+            MsgType = "message"
+            MsgTypeValue = Contact_f.text! as NSString
         }
         
         Submit()
@@ -213,7 +220,7 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
                     let db = Firestore.firestore()
 
                     let docData: [String: Any] = [
-                        "Message" : self.Message ?? "",
+                        self.MsgType as String : self.MsgTypeValue ?? "",
                         "userID" : currentUser?.uid ?? "",
                     ]
                     db.collection("UserRequest").document().setData(docData){ err in
