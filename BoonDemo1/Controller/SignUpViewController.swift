@@ -76,6 +76,13 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{ // called when 'return' key pressed. return NO to ignore.
+        emailIdField.resignFirstResponder()
+        passwordField.resignFirstResponder()
+        
+        return true
+    }
+    
     func resetForm() {
         let alert = UIAlertController(title: "Error logging in", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))

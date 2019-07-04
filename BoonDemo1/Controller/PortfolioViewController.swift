@@ -8,6 +8,8 @@
 
 import UIKit
 import Firebase
+//mport SnapKit
+
 
 
 class PortfolioViewController: UIViewController {
@@ -24,7 +26,11 @@ class PortfolioViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var ValueLb: UITextField!
-    
+    @IBOutlet weak var UDValue_Lb: UILabel!
+    @IBOutlet weak var UD_Lb: UILabel!
+    @IBOutlet weak var Header_View: UIView!
+    var Date_Str: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         Userid = Auth.auth().currentUser!.uid as NSString
@@ -35,12 +41,64 @@ class PortfolioViewController: UIViewController {
         
         //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
-        tableView.addSubview(refreshControl) // not required when using UITableViewController
-     
-        GetPortfolioUValue()
+        tableView.addSubview(refreshControl)
+        
+        // not required when using UITableViewController
+        tableView.estimatedSectionHeaderHeight = 40.0
 
+        self.automaticallyAdjustsScrollViewInsets = false
+        // Set a header for the table view
+//        let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+//        header.backgroundColor = .red
+        
+        tableView.tableHeaderView = Header_View
+
+        
+//        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
+//        statusBar.backgroundColor = .red
+        
+        let image3 = UIImage(named: "Group (1)")
+
+        self.view.backgroundColor = UIColor(patternImage: image3!)
+        tableView.backgroundColor = UIColor(patternImage: image3!)
+//        tableView.bounces = false
+        //tableView.isHidden = true
+        
+        let safeViewMargins = self.view.safeAreaLayoutGuide
+        tableView.topAnchor.constraint(equalTo: safeViewMargins.topAnchor).isActive = false
+        tableView.leadingAnchor.constraint(equalTo: safeViewMargins.leadingAnchor).isActive = false
+        tableView.trailingAnchor.constraint(equalTo: safeViewMargins.trailingAnchor).isActive = false
+
+
+        GetPortfolioUValue()
+        
+        self.UDValue_Lb.text = ""
+        self.UD_Lb.text = ""
+
+        
+        print(convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday)))    // "Oct 28, 2018 at 12:00 PM"
+        Date_Str = convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday))
+        GetTodayValue(dateString:Date_Str)
     }
     
+    func convertNextDate(dateString : String) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let myDate = dateFormatter.date(from: dateString)!
+        let somedateString = dateFormatter.string(from: myDate)
+        print("your next Date is \(somedateString)")
+        return somedateString
+    }
+    
+    func convertDateIntoString(dateString : Date) -> String{
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let myDate = dateString//dateFormatter.date(from: dateString)!
+        let somedateString = dateFormatter.string(from: myDate)
+        print("your next Date is \(somedateString)")
+        return somedateString
+    }
+
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         downloadJsonStockDetails()
@@ -66,25 +124,52 @@ class PortfolioViewController: UIViewController {
                         self.currentValue = document.data()["currentValue"] as? Int ?? 0
                         print(self.currentValue)
                         let aStr = String(format: "%@%d", "$", self.currentValue)
-
+                        
                         self.ValueLb.text = aStr
                     }
-//                    let gsReference = storage.reference(forURL: imageUrl)
-//                    let videoUrl = document.data()["videoUrl"] as? String ?? ""
-//                    self.videoUrls.append(videoUrl)
-//                    gsReference.getData(maxSize: 1 * 1024 * 1024) { data, error in
-//                        if let error = error {
-//                            print("Error getting documents: \(error)")
-//                        } else {
-//                            // Data for "images/island.jpg" is returned
-//                            let image = UIImage(data: data!)
-//                            let video = Video(image: image!, videoUrl: videoUrl)
-//
-//                            self.videos.append(video)
-//                        }
-//                        self.collectionView.reloadData()
-//                    }
                 }
+            }
+        }
+    }
+
+    func GetTodayValue(dateString : String){
+        let db = Firestore.firestore()
+        //let storage = Storage.storage()
+        
+        db.collection("boonportfolio").document(dateString).getDocument{
+            (querySnapshot, error) in
+            if let error = error{
+                print("Error getting documents: \(error)")
+                self.Date_Str = self.convertNextDate(dateString:self.Date_Str)
+
+            }else{
+                let Value = querySnapshot?.data()?["returns"] as! Double
+                
+                let d = Value*100
+                
+                // Then implement your if statement
+                if d > 0 {
+                    // Do what you want if d > 10
+                    self.UD_Lb.text = "UP"
+                    
+                } else {
+                    // Do what you want if d <= 10
+                    self.UD_Lb.text = "DOWN"
+                }
+                
+                //        let test : AnyObject = returnFieldText as AnyObject
+                //        let rounded_down = floorf(test.floatValue * 10) / 10;
+                //        print(rounded_down)
+                
+                let roundof : AnyObject = Value as AnyObject
+                
+                let roundedValue1 = NSString(format: "%.2f", roundof.floatValue)
+                print(roundedValue1) // prints 0.684
+                
+//                self.UDValue_Lb.text = roundedValue1
+                self.UDValue_Lb.text = "  " + (roundedValue1 as String)+"%" + " Today"
+
+
             }
         }
     }
@@ -130,7 +215,10 @@ class PortfolioViewController: UIViewController {
                 }
             } catch let jsonErr {
                 print("something went wrong after download",jsonErr)
-                self.refreshControl.endRefreshing()
+                DispatchQueue.main.async { // Correct
+                    self.refreshControl.endRefreshing()
+                }
+
             }
             }.resume()
         self.tableView?.reloadData()
@@ -140,6 +228,68 @@ class PortfolioViewController: UIViewController {
     
 }
 extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
+    
+    
+    //MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let v = UIView()
+//        v.backgroundColor = .white
+//        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 5, width: tableView.frame.width - 20, height: 30))
+//        segmentedControl.insertSegment(withTitle: "One", at: 0, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Two", at: 1, animated: false)
+//        segmentedControl.insertSegment(withTitle: "Three", at: 2, animated: false)
+//        v.addSubview(segmentedControl)
+        
+        let v = UIView()
+        v.backgroundColor = .white
+
+        let v_v = UIView()
+        v_v.backgroundColor = .white
+
+        v_v.frame = CGRect(x: 0, y: -45, width: tableView.frame.width, height: 80)
+
+        let view = UILabel()
+        view.frame = CGRect(x: 0, y: 35, width: tableView.frame.width, height: 40)
+        view.backgroundColor = .clear
+        let color1 = hexStringToUIColor(hex : "#506E8D")
+
+        view.textColor = color1//UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        
+        view.font = UIFont(name: "Montserrat-Regular", size: 18)
+        view.text = "Stocks you own"
+        //view.translatesAutoresizingMaskIntoConstraints = false
+        //view.widthAnchor.constraint(equalToConstant: 351).isActive = true
+        //view.heightAnchor.constraint(equalToConstant: 59).isActive = true
+        view.textAlignment = .center
+        view.numberOfLines = 3
+        v_v.addSubview(view)
+        v.addSubview(v_v)
+
+        return v
+    }
+    
+    func hexStringToUIColor (hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
+        
+        if (cString.hasPrefix("#")) {
+            cString.remove(at: cString.startIndex)
+        }
+        
+        if ((cString.count) != 6) {
+            return UIColor.gray
+        }
+        
+        var rgbValue:UInt32 = 0
+        Scanner(string: cString).scanHexInt32(&rgbValue)
+        
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section:Int) -> Int {
         return portfolios.count
     }
@@ -180,5 +330,26 @@ extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
     }
     
 }
+
+extension Date {
+    static var yesterday: Date { return Date().dayBefore }
+    static var tomorrow:  Date { return Date().dayAfter }
+    var dayBefore: Date {
+        return Calendar.current.date(byAdding: .day, value: -1, to: noon)!
+    }
+    var dayAfter: Date {
+        return Calendar.current.date(byAdding: .day, value: 1, to: noon)!
+    }
+    var noon: Date {
+        return Calendar.current.date(bySettingHour: 12, minute: 0, second: 0, of: self)!
+    }
+    var month: Int {
+        return Calendar.current.component(.month,  from: self)
+    }
+    var isLastDayOfMonth: Bool {
+        return dayAfter.month != month
+    }
+}
+
 
 

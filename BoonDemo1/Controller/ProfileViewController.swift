@@ -74,9 +74,24 @@ class ProfileViewController: UIViewController {
     
     
     @IBAction func clickContinue(_ sender: Any) {
-        var nameArray = NameField.text?.split(separator: " ")
-        let firstName = nameArray?[0]
-        let LastName = nameArray?[1]
+        var firstName = ""
+        var LastName = ""
+        
+        if let nameArray = NameField.text?.split(separator: " "){
+            if nameArray.count>1{
+                firstName = String(nameArray[0])
+                LastName = String(nameArray[1])
+            }else if nameArray.count>0{
+                firstName = String(nameArray[0])
+            }else{
+                firstName = ""
+                LastName = ""
+            }
+        }else{
+            firstName = NameField.text!
+            LastName = String("")
+        }
+        
         let db = Firestore.firestore()
         let currentUser = Auth.auth().currentUser
         let uid = currentUser?.uid ?? ""
