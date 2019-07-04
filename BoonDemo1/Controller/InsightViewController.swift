@@ -19,6 +19,14 @@ class InsightViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         createArray()
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.layoutIfNeeded()
+
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+
         // Do any additional setup after loading the view.
     }
 
@@ -84,6 +92,7 @@ extension InsightViewController : UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let insight = insights[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "insightTableViewCell")as!InsightTableViewCell
+        
         cell.setInsight(insight: insight)
         return cell
     }
