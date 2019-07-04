@@ -13,14 +13,21 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var Addfund_View: UIView!
     @IBOutlet weak var WITHDRAWFUNDS_View: UIView!
+    @IBOutlet weak var Contact_View: UIView!
     @IBOutlet weak var Back: UIButton!
     @IBOutlet weak var Deposit_f: UITextField!
     @IBOutlet weak var withdrawal_f: UITextField!
+    @IBOutlet weak var Contact_f: UITextField!
+
+    @IBOutlet weak var Scroll_V: UIScrollView!
+    @IBOutlet weak var Content_View: UIView!
 
     var deposit_msg: NSString!
     var deposit_Dmsg: NSString!
     var withdrawal_msg: NSString!
     var withdrawal_Dmsg: NSString!
+    var Contact_msg: NSString!
+    var Contact_Dmsg: NSString!
     var Message: NSString!
     var DMessage: NSString!
 
@@ -30,13 +37,15 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
         // Do any additional setup after loading the view.
         SetView(UView: Addfund_View)
         SetView(UView: WITHDRAWFUNDS_View)
-        
+        SetView(UView: Contact_View)
+
         //let Back = UIButton(type: .custom)
         let image = UIImage(named: "backArrow")?.withRenderingMode(.alwaysTemplate)
         Back.setImage(image, for: .normal)
         Back.tintColor = UIColor.black
 
         
+        Scroll_V.contentSize.height = Content_View.frame.size.height
 
         
     }
@@ -151,24 +160,36 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
         
         let currentUser = Auth.auth().currentUser
 
-        deposit_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to deposit %@ in their portfolio on date time\nOnce the message is sent to us, the user should get a prompt stating",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
+        deposit_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to deposit %@ in their portfolio on\nOnce the message is sent to us, the user should get a prompt stating",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
         
         
         deposit_Dmsg = String(format:"Hello BoonInvest, %@ (%@), your request has been submitted successfully. The support team will deposit $amount as per end of the day value.",(currentUser?.displayName!)!, (currentUser?.email!)!,Deposit_f.text!) as NSString
         
         
-        withdrawal_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to withdraw %@ from their portfolio on date time",(currentUser?.displayName!)!, (currentUser?.email!)!,withdrawal_f.text!) as NSString
+        withdrawal_msg = String(format:"Hello BoonInvest, %@ (%@) has requested to withdraw %@ from their portfolio.",(currentUser?.displayName!)!, (currentUser?.email!)!,withdrawal_f.text!) as NSString
         
         
-        deposit_Dmsg = String(format:"Hello %@, your request has been submitted successfully. The support team will deposit %@ as per end of the day value.",(currentUser?.displayName!)!,withdrawal_f.text!) as NSString
+        withdrawal_Dmsg = String(format:"Hello %@, your request has been submitted successfully. The support team will deposit %@ as per end of the day value.",(currentUser?.displayName!)!,withdrawal_f.text!) as NSString
+
+        Contact_msg = String(format:"Hello BoonInvest, %@ has the following message for you:\n%@",(currentUser?.displayName!)!,Contact_f.text!) as NSString
+        
+        
+        Contact_Dmsg = String(format:"Hello %@, your request has been sent successfully. The support team will contact you within 24 hours.",(currentUser?.displayName!)!) as NSString
 
         
         if sender.tag == 1 {
             Message = deposit_msg
             DMessage = deposit_Dmsg
-        }else{
+            Deposit_f.text = ""
+        }else if sender.tag == 2{
             Message = withdrawal_msg
             DMessage = withdrawal_Dmsg
+            withdrawal_f.text = ""
+        }else{
+            Message = Contact_msg
+            DMessage = Contact_Dmsg
+            Contact_f.text = ""
+
         }
         
         Submit()
@@ -185,23 +206,34 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
 
         
         let task = URLSession.shared.dataTask(with: NSURL(string: Url!)! as URL, completionHandler: { (data, response, error) -> Void in
-            do{
-                let str = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:AnyObject]
-                print(str)
-                
+            if ((error) == nil){
                 DispatchQueue.main.async {
+                    
+                    
+                    let db = Firestore.firestore()
+
+                    let docData: [String: Any] = [
+                        "Message" : self.Message ?? "",
+                        "userID" : currentUser?.uid ?? "",
+                    ]
+                    db.collection("UserRequest").document().setData(docData){ err in
+                        if let err = err {
+                            print("Error writing document: \(err)")
+                        } else {
+                            print("Document successfully written!")
+                            
+                        }
+                    }
+                    
+                    
                     // view instantition here.
                     let alert = UIAlertController(title: "Alert!", message: self.DMessage as String?, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
-
-
-            }
-            catch {
-                print("json error: \(error)")
+            }else{
                 DispatchQueue.main.async {
-                    let alert = UIAlertController(title: "Alert!", message: error.localizedDescription as String?, preferredStyle: .alert)
+                    let alert = UIAlertController(title: "Alert!", message: error?.localizedDescription as String?, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -219,7 +251,8 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{ // called when 'return' key pressed. return NO to ignore.
         Deposit_f.resignFirstResponder()
         withdrawal_f.resignFirstResponder()
-        
+        Contact_f.resignFirstResponder()
+
         return true
     }
 

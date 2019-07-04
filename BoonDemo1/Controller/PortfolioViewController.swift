@@ -148,7 +148,7 @@ class PortfolioViewController: UIViewController {
             }else{
                 let Value = querySnapshot?.data()?["returns"] as! Double
                 
-                let d = Value
+                let d = Value*100
                 
                 // Then implement your if statement
                 if d > 0 {
