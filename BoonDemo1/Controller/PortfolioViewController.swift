@@ -8,9 +8,6 @@
 
 import UIKit
 import Firebase
-//mport SnapKit
-
-
 
 class PortfolioViewController: UIViewController {
     
@@ -38,8 +35,6 @@ class PortfolioViewController: UIViewController {
         tableView.delegate = self
         downloadJsonStockDetails()
         downloadJson()
-        
-        //refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         tableView.addSubview(refreshControl)
         
@@ -47,22 +42,13 @@ class PortfolioViewController: UIViewController {
         tableView.estimatedSectionHeaderHeight = 40.0
 
         self.automaticallyAdjustsScrollViewInsets = false
-        // Set a header for the table view
-//        let header = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
-//        header.backgroundColor = .red
         
         tableView.tableHeaderView = Header_View
-
-        
-//        guard let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView else { return }
-//        statusBar.backgroundColor = .red
         
         let image3 = UIImage(named: "Group (1)")
 
         self.view.backgroundColor = UIColor(patternImage: image3!)
         tableView.backgroundColor = UIColor(patternImage: image3!)
-//        tableView.bounces = false
-        //tableView.isHidden = true
         
         let safeViewMargins = self.view.safeAreaLayoutGuide
         tableView.topAnchor.constraint(equalTo: safeViewMargins.topAnchor).isActive = false
@@ -76,7 +62,7 @@ class PortfolioViewController: UIViewController {
         self.UD_Lb.text = ""
 
         
-        print(convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday)))    // "Oct 28, 2018 at 12:00 PM"
+        print(convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday)))
         Date_Str = convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday))
         GetTodayValue(dateString:Date_Str)
     }
@@ -93,7 +79,7 @@ class PortfolioViewController: UIViewController {
     func convertDateIntoString(dateString : Date) -> String{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
-        let myDate = dateString//dateFormatter.date(from: dateString)!
+        let myDate = dateString
         let somedateString = dateFormatter.string(from: myDate)
         print("your next Date is \(somedateString)")
         return somedateString
@@ -110,7 +96,6 @@ class PortfolioViewController: UIViewController {
     
     func GetPortfolioUValue(){
         let db = Firestore.firestore()
-        //let storage = Storage.storage()
         db.collection("userPortfolio").getDocuments(){
             (querySnapshot, error) in
             if let error = error{
@@ -134,8 +119,6 @@ class PortfolioViewController: UIViewController {
 
     func GetTodayValue(dateString : String){
         let db = Firestore.firestore()
-        //let storage = Storage.storage()
-        
         db.collection("boonportfolio").document(dateString).getDocument{
             (querySnapshot, error) in
             if let error = error{
@@ -157,25 +140,16 @@ class PortfolioViewController: UIViewController {
                     self.UD_Lb.text = "DOWN"
                 }
                 
-                //        let test : AnyObject = returnFieldText as AnyObject
-                //        let rounded_down = floorf(test.floatValue * 10) / 10;
-                //        print(rounded_down)
-                
                 let roundof : AnyObject = Value as AnyObject
                 
                 let roundedValue1 = NSString(format: "%.2f", roundof.floatValue)
-                print(roundedValue1) // prints 0.684
-                
-//                self.UDValue_Lb.text = roundedValue1
                 self.UDValue_Lb.text = "  " + (roundedValue1 as String)+"%" + " Today"
 
 
             }
         }
     }
-
     
-        // Do any additional setup after loading the view
     func downloadJsonStockDetails()
     {
         guard let downloadURL = URL(string: urlToGetStockDetails) else { return }
@@ -228,17 +202,7 @@ class PortfolioViewController: UIViewController {
     
 }
 extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
-    
-    
-    //MARK: UITableViewDelegate
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let v = UIView()
-//        v.backgroundColor = .white
-//        let segmentedControl = UISegmentedControl(frame: CGRect(x: 10, y: 5, width: tableView.frame.width - 20, height: 30))
-//        segmentedControl.insertSegment(withTitle: "One", at: 0, animated: false)
-//        segmentedControl.insertSegment(withTitle: "Two", at: 1, animated: false)
-//        segmentedControl.insertSegment(withTitle: "Three", at: 2, animated: false)
-//        v.addSubview(segmentedControl)
         
         let v = UIView()
         v.backgroundColor = .white
@@ -253,13 +217,10 @@ extension PortfolioViewController: UITableViewDataSource, UITableViewDelegate{
         view.backgroundColor = .clear
         let color1 = hexStringToUIColor(hex : "#506E8D")
 
-        view.textColor = color1//UIColor(red: 0, green: 0, blue: 0, alpha: 1)
+        view.textColor = color1
         
         view.font = UIFont(name: "Montserrat-Regular", size: 18)
         view.text = "Stocks you own"
-        //view.translatesAutoresizingMaskIntoConstraints = false
-        //view.widthAnchor.constraint(equalToConstant: 351).isActive = true
-        //view.heightAnchor.constraint(equalToConstant: 59).isActive = true
         view.textAlignment = .center
         view.numberOfLines = 3
         v_v.addSubview(view)

@@ -18,7 +18,6 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var Deposit_f: UITextField!
     @IBOutlet weak var withdrawal_f: UITextField!
     @IBOutlet weak var Contact_f: UITextField!
-
     @IBOutlet weak var Scroll_V: UIScrollView!
     @IBOutlet weak var Content_View: UIView!
 
@@ -75,17 +74,11 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
     
     func SetView(UView : UIView) {
         // Rectangle
-        
-        
         let view = UILabel()
         
         view.frame = CGRect(x: 0, y: 0, width: UView.frame.size.width, height: UView.frame.size.height)
         
         view.backgroundColor = .clear
-        
-        //self.view = view
-        
-        
         let shadows = UIView()
         
         shadows.frame = view.frame
@@ -143,18 +136,8 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
         
         parent.addSubview(view)
         parent.sendSubview(toBack: view)
-        //view.translatesAutoresizingMaskIntoConstraints = false
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     @IBAction func clickSubmit(_ sender: UIButton) {
         

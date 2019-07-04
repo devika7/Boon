@@ -10,7 +10,6 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    @IBOutlet weak var goBack: UIButton!
     @IBOutlet weak var ticker: UILabel!
     @IBOutlet weak var companyName: UILabel!
     @IBOutlet weak var stockPrice: UILabel!
@@ -26,9 +25,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var beta: UILabel!
     @IBOutlet weak var marketcap: UILabel!
     
-    @IBAction func backToPortfolio(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
     
     @IBOutlet weak var Scroll_V: UIScrollView!
     private let refreshControl = UIRefreshControl()
@@ -53,14 +49,8 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
         Scroll_V.addSubview(refreshControl)
-
-        
-        
-        // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -73,7 +63,6 @@ class DetailViewController: UIViewController {
     @objc func refresh(sender:AnyObject) {
         // Code to refresh table view
         self.shortdesc.sizeToFit()
-
         initDetailView()
     }
 
@@ -91,20 +80,10 @@ class DetailViewController: UIViewController {
             self.upDownField.text = "UP"
 
         } else {
-            // Do what you want if d <= 10
             self.upDownField.text = "DOWN"
         }
-
-//        let test : AnyObject = returnFieldText as AnyObject
-//        let rounded_down = floorf(test.floatValue * 10) / 10;
-//        print(rounded_down)
-
         let roundof : AnyObject = returnFieldText as AnyObject
-
         let roundedValue1 = NSString(format: "%.2f", roundof.floatValue)
-        print(roundedValue1) // prints 0.684
-
-        
         self.marketcap.text = marketcapText
         self.beta.text = betaText
         self.returnField.text = "  " + (roundedValue1 as String)+"%" + " Today"
@@ -115,9 +94,6 @@ class DetailViewController: UIViewController {
         self.fiftyTwoWeekHigh.text = fiftyTwoWeekHighText
         self.fiftyTwoWeekLow.text = fiftyTwoWeekLowText
         self.shortdesc.text = shortdescText
-        
-        print(shortdescText)
-        
         self.refreshControl.endRefreshing()
         
         

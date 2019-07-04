@@ -15,8 +15,6 @@ class ForgotPasswordViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 
@@ -24,8 +22,6 @@ class ForgotPasswordViewController: UIViewController {
         
         
         Auth.auth().sendPasswordReset(withEmail:emailIdField.text!) { error in
-            // Your code here
-            
             if error != nil{
                 let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: \(String(describing: error?.localizedDescription))", preferredStyle: .alert)
                 resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
@@ -42,10 +38,6 @@ class ForgotPasswordViewController: UIViewController {
                 
                 resetEmailSentAlert.addAction(action1)
                 self.present(resetEmailSentAlert, animated: true, completion: nil)
-                
-
-                
-                
             }
 
             
@@ -59,15 +51,5 @@ class ForgotPasswordViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

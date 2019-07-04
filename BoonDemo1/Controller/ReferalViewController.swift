@@ -18,8 +18,6 @@ class ReferalViewController: UIViewController {
         super.viewDidLoad()
         setSubmitButton(enabled: false)
         referalEmailId.addTarget(self, action: #selector(enableSubmitButton), for: .editingChanged)
-        
-        // Do any additional setup after loading the view.
     }
     
     @objc func enableSubmitButton(_ target : UITextField){
@@ -36,12 +34,11 @@ class ReferalViewController: UIViewController {
              submitButton.isEnabled = false
         }
     }
-    
-    @IBAction func clickSubmit(_ sender: Any) {
+    @IBAction func clickShare(_ sender: Any) {
         let db = Firestore.firestore()
         let data = ["referEmailId" : referalEmailId.text ?? "",
                     "userId" : Auth.auth().currentUser?.email ?? ""]
-    db.collection("referralId").document().setData(data){
+        db.collection("referralId").document().setData(data){
             err in
             if let err = err {
                 print("Error writing document: \(err)")
@@ -52,25 +49,13 @@ class ReferalViewController: UIViewController {
         }
     }
     
+    
     func resetForm(){
         let alert = UIAlertController(title: "Thanks for sharing your love.", message: nil, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok" , style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         self.referalEmailId.text?.removeAll()
         setSubmitButton(enabled : false)
-        
     }
-    
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

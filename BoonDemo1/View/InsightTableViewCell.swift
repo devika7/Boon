@@ -16,20 +16,7 @@ class InsightTableViewCell: UITableViewCell {
     @IBOutlet weak var insightView: UIView!
 
     func setInsight(insight: Insight){
-        
-//        insightView.layer.cornerRadius = 20
-//        insightView.layer.borderWidth = 1
-//        insightView.layer.borderColor = UIColor(red: 0.2, green: 0.8, blue: 0.65, alpha: 0.3).cgColor
-//
-//        insightView.layer.masksToBounds = false
-//        insightView.layer.shadowOffset = CGSize(width: 0.0, height: 0.0)
-//        insightView.layer.shadowOpacity = 0.5
-
-        
         // Rectangle 6.4
-        
-        
-        
         for V : UIView in insightView.subviews {
             if V.tag == 99{
                 V.removeFromSuperview()
@@ -42,9 +29,6 @@ class InsightTableViewCell: UITableViewCell {
         
         view.backgroundColor = .clear
         view.tag = 99
-
-        //self.insightView = view
-        
         
         let shadows = UIView()
         
@@ -103,17 +87,11 @@ class InsightTableViewCell: UITableViewCell {
         
         shapes.layer.borderColor = UIColor(red: 0.2, green: 0.8, blue: 0.65, alpha: 0.3).cgColor
         
-        
-        //let parent = self.view!
-        
-        
-        
         insightTitle.text = insight.title
         insightDesc.text = insight.text
         insightImage.image = insight.image
         
         insightView.addSubview(view)
-//        insightView.sendSubview(toBack: view)
         
         insightView.bringSubview(toFront: insightTitle)
         insightView.bringSubview(toFront: insightDesc)
@@ -121,9 +99,5 @@ class InsightTableViewCell: UITableViewCell {
         
         insightTitle.font = UIFont(name: "Montserrat-Regular", size: 16)
         insightDesc.font = UIFont(name: "Montserrat-Regular", size: 13)
-
-        //view.translatesAutoresizingMaskIntoConstraints = false
-
-        
     }
 }

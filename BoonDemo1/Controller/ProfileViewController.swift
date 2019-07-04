@@ -16,18 +16,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailIdField: UITextField!
     @IBOutlet weak var PhonenoField: UITextField!
     @IBOutlet weak var AddressField: UITextField!
-    @IBOutlet weak var passwordField: UITextField!
-    @IBOutlet weak var Submit: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        
-//        let emailAddress = currentUser?.email ?? ""
-//        let Name = currentUser?.displayName ?? ""
-
-        
         GetProfile()
     }
     
@@ -38,7 +29,6 @@ class ProfileViewController: UIViewController {
         let uid = currentUser?.uid ?? ""
 
         let db = Firestore.firestore()
-        //let storage = Storage.storage()
         db.collection("user").document(uid).getDocument{
             (querySnapshot, error) in
             if let error = error{
@@ -105,13 +95,6 @@ class ProfileViewController: UIViewController {
                 print("profile updated")
             }
         }
-//        currentUser?.updatePassword(to: self.passwordField.text!){(error) in
-//            if let error = error {
-//                print("Error writing document: \(error)")
-//            } else {
-//                print("profile updated")
-//            }
-//        }
         currentUser?.updateEmail(to: self.emailIdField.text!){(error) in
             if let error = error {
                 print("Error writing document: \(error)")
@@ -120,13 +103,11 @@ class ProfileViewController: UIViewController {
             }
         }
         let docData: [String: Any] = [
-            "firstName" : firstName ?? "",
-            "lastName" : LastName ?? "",
+            "firstName" : firstName ,
+            "lastName" : LastName ,
             "emailAddress" : emailAddress,
             "phoneNumber" : PhonenoField.text ?? "",
             "streetAddress" : AddressField.text ?? "",
-//            "cityState" : cityAndState.text ?? "",
-//            "zipCode" : zipCode.text ?? ""
         ]
         db.collection("user").document(uid).setData(docData){ err in
             if let err = err {
@@ -148,16 +129,5 @@ class ProfileViewController: UIViewController {
         }
 
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

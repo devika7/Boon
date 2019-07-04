@@ -26,25 +26,11 @@ class InsightViewController: UIViewController {
 
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
     
     func  createArray(){
         let db = Firestore.firestore()
@@ -68,7 +54,6 @@ class InsightViewController: UIViewController {
                         if let error = error {
                             print("Error getting documents: \(error)")
                         } else {
-                            // Data for "images/island.jpg" is returned
                             let image = UIImage(data: data!)
                             
                             let insight = Insight(title: title, text: text, image: image!, url: insightUrl)

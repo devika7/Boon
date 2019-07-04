@@ -27,8 +27,6 @@ class UserDetailsViewController: UIViewController {
         streetAddress.addTarget(self, action: #selector(enableContinueButton), for: .editingChanged)
         cityAndState.addTarget(self, action: #selector(enableContinueButton), for: .editingChanged)
         zipCode.addTarget(self, action: #selector(enableContinueButton), for: .editingChanged)
-
-        // Do any additional setup after loading the view.
     }
     
     @objc func enableContinueButton(_ target : UITextField){
@@ -52,17 +50,6 @@ class UserDetailsViewController: UIViewController {
     continueButton.alpha = 0.5
     }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
     @IBAction func clickContinue(_ sender: Any) {
        var nameArray = fullName.text?.split(separator: " ")
         let firstName = nameArray?[0]

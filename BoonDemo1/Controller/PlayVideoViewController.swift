@@ -17,16 +17,9 @@ class PlayVideoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         loadVideo(firebaseUrl: selectedVideoUrl)
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     func loadVideo(firebaseUrl : String){
         let videoUrl = NSURL(string: firebaseUrl)
         let player = AVPlayer(url: videoUrl! as URL)

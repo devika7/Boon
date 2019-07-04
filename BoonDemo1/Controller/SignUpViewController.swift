@@ -30,10 +30,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         setLoginButton(enabled: formFilled)
     }
     
-    /**
-     Enables or Disables the **sign up button**.
-     */
-    
     func setLoginButton(enabled:Bool) {
         if enabled {
             logInButton.isEnabled = true
@@ -76,7 +72,7 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool{ // called when 'return' key pressed. return NO to ignore.
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{ 
         emailIdField.resignFirstResponder()
         passwordField.resignFirstResponder()
         
