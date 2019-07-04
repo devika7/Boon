@@ -182,21 +182,21 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
         if sender.tag == 1 {
             Message = deposit_msg
             DMessage = deposit_Dmsg
+            MsgTypeValue = Deposit_f.text! as NSString
             Deposit_f.text = ""
             MsgType = "deposit"
-            MsgTypeValue = Deposit_f.text! as NSString
         }else if sender.tag == 2{
             Message = withdrawal_msg
             DMessage = withdrawal_Dmsg
+            MsgTypeValue = withdrawal_f.text! as NSString
             withdrawal_f.text = ""
             MsgType = "withdraw"
-            MsgTypeValue = withdrawal_f.text! as NSString
         }else{
             Message = Contact_msg
             DMessage = Contact_Dmsg
+            MsgTypeValue = Contact_f.text! as NSString
             Contact_f.text = ""
             MsgType = "message"
-            MsgTypeValue = Contact_f.text! as NSString
         }
         
         Submit()
