@@ -75,7 +75,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool{ 
         emailIdField.resignFirstResponder()
         passwordField.resignFirstResponder()
-        
         return true
     }
     
@@ -84,6 +83,11 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         alert.addAction(UIAlertAction(title: "Okay", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
         setLoginButton(enabled: true)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        self.view.endEditing(true)
     }
 
     

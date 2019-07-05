@@ -53,7 +53,16 @@ class ResetPasswordViewController: UIViewController {
         
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{ // called when 'return' key pressed. return NO to ignore.
+        enterNewPassword.resignFirstResponder()
+        confirmNewPassword.resignFirstResponder()
+        return true
+    }
     
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
 
     /*
     // MARK: - Navigation

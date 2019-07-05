@@ -20,9 +20,10 @@ class PortfolioTableViewCell: UITableViewCell {
             let color1 = hexStringToUIColor(hex : "#F8A1A1")
             dailyReturnDisplayField.backgroundColor = color1
         }else{
-             let color3 = hexStringToUIColor(hex : "#C2F4E4")
-                dailyReturnDisplayField.backgroundColor = color3
+             let color2 = hexStringToUIColor(hex : "#C2F4E4")
+                dailyReturnDisplayField.backgroundColor = color2
         }
+        dailyReturnDisplayField.frame = CGRect(x: 0, y: 0, width: 81, height: 50)
         dailyReturnDisplayField.layer.masksToBounds = true
         dailyReturnDisplayField.layer.cornerRadius = 10
         dailyReturnDisplayField.text = "\(dailyReturns)%"

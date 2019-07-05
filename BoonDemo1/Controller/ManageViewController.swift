@@ -20,7 +20,10 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var Contact_f: UITextField!
     @IBOutlet weak var Scroll_V: UIScrollView!
     @IBOutlet weak var Content_View: UIView!
-
+    @IBOutlet weak var depositFunds: UIButton!
+    @IBOutlet weak var withdrawFunds: UIButton!
+    @IBOutlet weak var sendMessage: UIButton!
+    
     var deposit_msg: NSString!
     var deposit_Dmsg: NSString!
     var withdrawal_msg: NSString!
@@ -34,21 +37,56 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        setButton(enabled: false, button: depositFunds)
+        setButton(enabled: false, button: withdrawFunds)
+        setButton(enabled: false, button: sendMessage)
         SetView(UView: Addfund_View)
         SetView(UView: WITHDRAWFUNDS_View)
         SetView(UView: Contact_View)
+        
+        Deposit_f.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        
+        withdrawal_f.addTarget(self, action: #selector(enableButton), for: .editingChanged)
+        
+        Contact_f.addTarget(self, action: #selector(enableButton), for: .editingChanged)
 
-        //let Back = UIButton(type: .custom)
         let image = UIImage(named: "backArrow")?.withRenderingMode(.alwaysTemplate)
         Back.setImage(image, for: .normal)
         Back.tintColor = UIColor.black
-
+        Scroll_V.contentSize.height = Content_View.frame.size.height + 500
+        Scroll_V.keyboardDismissMode = .onDrag
         
-        Scroll_V.contentSize.height = Content_View.frame.size.height
-
+    }
+    
+    @objc func enableButton(_ target : UITextField){
+        let depositFundsText = Deposit_f.text ?? ""
+        let withdrawFundsText = withdrawal_f.text ?? ""
+        let sendMessageText = Contact_f.text ?? ""
         
+        if depositFundsText != ""  && depositFundsText != "0"{
+            setButton(enabled: true, button: depositFunds)
+        }
+        
+        if withdrawFundsText != "" && withdrawFundsText != "0"{
+            setButton(enabled: true, button: withdrawFunds)
+        }
+        
+        if sendMessageText != "" && sendMessageText != "0"{
+            setButton(enabled: true, button: sendMessage)
+        }
+        
+        
+    }
+    
+    func setButton(enabled:Bool, button : UIButton ){
+        if enabled{
+            button.isEnabled = true
+            button.alpha = 1.0
+        }else{
+            button.isEnabled = false
+            button.alpha = 0.5
+        }
     }
     
     func hexStringToUIColor (hex:String) -> UIColor {
@@ -220,12 +258,18 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
                     let alert = UIAlertController(title: "Alert!", message: self.DMessage as String?, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    self.setButton(enabled: false, button: self.depositFunds)
+                    self.setButton(enabled: false, button: self.withdrawFunds)
+                    self.setButton(enabled: false, button: self.sendMessage)
                 }
             }else{
                 DispatchQueue.main.async {
                     let alert = UIAlertController(title: "Alert!", message: error?.localizedDescription as String?, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                    self.setButton(enabled: false, button: self.depositFunds)
+                    self.setButton(enabled: false, button: self.withdrawFunds)
+                    self.setButton(enabled: false, button: self.sendMessage)
                 }
             }
         })
@@ -242,8 +286,12 @@ class ManageViewController: UIViewController,UITextFieldDelegate {
         Deposit_f.resignFirstResponder()
         withdrawal_f.resignFirstResponder()
         Contact_f.resignFirstResponder()
-
         return true
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>,
+                               with event: UIEvent?) {
+        self.Scroll_V.endEditing(true)
     }
 
 }

@@ -60,11 +60,9 @@ class PortfolioViewController: UIViewController {
         
         self.UDValue_Lb.text = ""
         self.UD_Lb.text = ""
-
-        
-        print(convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday)))
-        Date_Str = convertNextDate(dateString: convertDateIntoString(dateString: Date.yesterday))
+        Date_Str = convertNextDate(dateString: convertDateIntoString(dateString: Date.init()))
         GetTodayValue(dateString:Date_Str)
+       
     }
     
     func convertNextDate(dateString : String) -> String{
@@ -116,6 +114,7 @@ class PortfolioViewController: UIViewController {
             }
         }
     }
+    
 
     func GetTodayValue(dateString : String){
         let db = Firestore.firestore()
@@ -124,9 +123,11 @@ class PortfolioViewController: UIViewController {
             if let error = error{
                 print("Error getting documents: \(error)")
                 self.Date_Str = self.convertNextDate(dateString:self.Date_Str)
-
             }else{
-                let Value = querySnapshot?.data()?["returns"] as! Double
+                var Value = 0.00
+                if querySnapshot?.data() != nil{
+                    Value = querySnapshot?.data()?["returns"] as! Double
+                }
                 
                 let d = Value*100
                 
@@ -135,12 +136,17 @@ class PortfolioViewController: UIViewController {
                     // Do what you want if d > 10
                     self.UD_Lb.text = "UP"
                     
-                } else {
+                }
+                else if d == 0 {
+                     self.UD_Lb.text = ""
+                }
+                else {
                     // Do what you want if d <= 10
+                    self.UD_Lb.textColor = UIColor(red: 0.97, green: 0.04, blue: 0.04, alpha: 0.35)
                     self.UD_Lb.text = "DOWN"
                 }
                 
-                let roundof : AnyObject = Value as AnyObject
+                let roundof : AnyObject = d as AnyObject
                 
                 let roundedValue1 = NSString(format: "%.2f", roundof.floatValue)
                 self.UDValue_Lb.text = "  " + (roundedValue1 as String)+"%" + " Today"

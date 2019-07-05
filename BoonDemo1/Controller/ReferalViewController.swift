@@ -11,20 +11,30 @@ import Firebase
 
 class ReferalViewController: UIViewController {
 
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var referalEmailId: UITextField!
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+         scrollView.contentSize.height = contentView.frame.size.height + 500
         setSubmitButton(enabled: false)
         referalEmailId.addTarget(self, action: #selector(enableSubmitButton), for: .editingChanged)
+        scrollView.keyboardDismissMode = .onDrag
     }
     
     @objc func enableSubmitButton(_ target : UITextField){
-        let emailId = referalEmailId.text
-        let emailIdPresent = emailId != nil && emailId != ""
+        let emailId = referalEmailId.text ?? ""
+        let emailIdPresent = emailId != "" && validateEmail(enteredEmail: emailId)
         setSubmitButton(enabled : emailIdPresent)
         
+    }
+    
+    func validateEmail(enteredEmail:String) -> Bool {
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: enteredEmail)
     }
     
     func setSubmitButton(enabled: Bool){
@@ -34,6 +44,7 @@ class ReferalViewController: UIViewController {
              submitButton.isEnabled = false
         }
     }
+  
     @IBAction func clickShare(_ sender: Any) {
         let db = Firestore.firestore()
         let data = ["referEmailId" : referalEmailId.text ?? "",
@@ -57,5 +68,12 @@ class ReferalViewController: UIViewController {
         self.referalEmailId.text?.removeAll()
         setSubmitButton(enabled : false)
     }
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool{ // called when 'return' key pressed. return NO to ignore.
+        referalEmailId.resignFirstResponder()
+        return true
+    }
+    
 }
+
+
