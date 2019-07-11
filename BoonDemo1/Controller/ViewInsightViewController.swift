@@ -14,14 +14,6 @@ class ViewInsightViewController: UIViewController {
     @IBOutlet weak var insightView: WKWebView!
     var insightUrl = ""
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var Title_lb: UILabel!
-    @IBOutlet weak var Text_lb: UILabel!
-    @IBOutlet weak var Image_view: UIImageView!
-
-    var insightTitle = ""
-    var insightText = ""
-    var image = UIImage.init()
 
 //    var titleLabel : UILabel = {
 //        let view = UILabel()
