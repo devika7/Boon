@@ -33,6 +33,16 @@ class PortfolioViewController: UIViewController {
         Userid = Auth.auth().currentUser!.uid as NSString
         tableView.dataSource = self
         tableView.delegate = self
+//        tableView.translatesAutoresizingMaskIntoConstraints = false
+        
+//        tableView.widthAnchor.constraint(equalToConstant: 318).isActive = true
+//
+//        tableView.heightAnchor.constraint(equalToConstant: 582).isActive = true
+//
+//        tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 28).isActive = true
+//
+//        tableView.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 183).isActive = true
+        
         downloadJsonStockDetails()
         downloadJson()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)

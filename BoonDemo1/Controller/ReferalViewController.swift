@@ -11,14 +11,12 @@ import Firebase
 
 class ReferalViewController: UIViewController {
 
-    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var referalEmailId: UITextField!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var submitButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         scrollView.contentSize.height = contentView.frame.size.height + 500
         setSubmitButton(enabled: false)
         referalEmailId.addTarget(self, action: #selector(enableSubmitButton), for: .editingChanged)
         scrollView.keyboardDismissMode = .onDrag

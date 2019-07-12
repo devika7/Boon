@@ -18,6 +18,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        emailIdField.layer.borderColor = UIColor.gray.cgColor
+        passwordField.layer.borderColor = UIColor.gray.cgColor
         logInButton.isEnabled = false
         emailIdField.addTarget(self, action: #selector(enableLoginButton), for: .editingChanged)
         passwordField.addTarget(self, action: #selector(enableLoginButton), for: .editingChanged)

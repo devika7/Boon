@@ -108,6 +108,9 @@ class ViewInsightViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let screenBounds = UIScreen.main.bounds
+        let screen_width = screenBounds.width
+        let screen_height = screenBounds.height
         loadInsightUrl()
     }
     
